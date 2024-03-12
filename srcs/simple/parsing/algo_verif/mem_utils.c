@@ -1,0 +1,74 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   mem_utils.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/08 15:56:15 by glions            #+#    #+#             */
+/*   Updated: 2024/03/12 10:28:48 by glions           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../../includes/parsing.h"
+
+int	verif_mem(int *mem, int size)
+{
+	int	i;
+
+	i = -1;
+	while (++i < size)
+		if (mem[i] != 1)
+			return (0);
+	return (1);
+}
+
+int	verif_mems(t_pos_algo **grid, t_map *m, int size)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while (++i < m->height)
+	{
+		j = -1;
+		while (++j < m->width)
+			if (verif_mem(grid[i][j].mem, size))
+				return (1);
+	}
+	return (0);
+}
+
+// void	print_mem(int *mem, int size)
+// {
+// 	int	i;
+
+// 	i = -1;
+// 	printf("[");
+// 	while (++i < size)
+// 	{
+// 		printf("%d", mem[i]);
+// 		if (i < size - 1)
+// 			printf(";");
+// 	}
+// 	printf("]\n");
+// }
+
+void	set_mem(int **mem, int id, int size)
+{
+	int	i;
+
+	i = -1;
+	while (++i < size)
+	{
+		if (i == id)
+			(*mem)[i] = 1;
+		else
+			(*mem)[i] = 0;
+	}
+}
+
+void	update_mem(int **mem, int id)
+{
+	(*mem)[id] = 1;
+}
