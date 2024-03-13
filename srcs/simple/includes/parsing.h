@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:28:27 by glions            #+#    #+#             */
-/*   Updated: 2024/03/12 11:19:13 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/13 15:43:13 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,20 @@
 
 # include "../../file42/includes/file42.h"
 # include "../../libft/includes/libft.h"
+
+typedef struct s_image42
+{
+	void		*ptr;
+	int			width;
+	int			height;
+	int			posx;
+	int			posy;
+	void		*mlx;
+	char		*addr;
+	int			bpp;
+	int			endian;
+	int			line_len;
+}				t_image42;
 
 typedef struct s_coord
 {
@@ -26,7 +40,7 @@ typedef struct s_map_pos
 {
 	t_coord			*coord;
 	int				value;
-	void			*img_ptr;
+	t_image42		*img_ptr;
 }					t_map_pos;
 
 typedef struct s_map
@@ -34,7 +48,10 @@ typedef struct s_map
 	t_map_pos		**grid;
 	int				width;
 	int				height;
+	int				width_g;
+	int				height_g;
 }					t_map;
+
 typedef struct s_pos_algo
 {
 	int				*mem;

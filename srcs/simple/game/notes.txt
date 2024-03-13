@@ -1,0 +1,15 @@
+
+
+Taille de l'image d'un sol : 64x64
+Taille de l'image d'un loup : 64x64
+Taille de l'image d'un cerf : 32x41
+
+Ecart pour le sol du dessous : h->20;w->16
+Ecart pour le sol a droite : h->19;w->40
+
+Position du loup sur le sol : w->pareille; h->-10
+Position du cerf sur le sol : w->+16; h->pareille
+
+Generation de la map
+
+width = 

@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:05:04 by glions            #+#    #+#             */
-/*   Updated: 2024/03/12 16:51:18 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/13 15:37:51 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	game_free(t_game *game)
 {
+	if (game->map)
+		free_map(game->map);
 	if (game->win)
 		window42_free(game->win);
 	if (game->mlx)

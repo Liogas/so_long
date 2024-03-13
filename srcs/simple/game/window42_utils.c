@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:22:05 by glions            #+#    #+#             */
-/*   Updated: 2024/03/12 18:10:03 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/13 11:05:31 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void    window42_free(t_window42 *win)
 {
-    if (win->img_bckg)
+    if (win->bg)
     {
-        mlx_destroy_image(win->mlx, win->img_bckg->ptr);
-        free(win->img_bckg);
+        mlx_destroy_image(win->mlx, win->bg->ptr);
+        free(win->bg);
     }
     if (win->win)
         mlx_destroy_window(win->mlx, win->win);
@@ -28,7 +28,6 @@ void    window42_free(t_window42 *win)
 t_window42  *window42_new(void *mlx, int sy, int sx)
 {
     t_window42  *new;
-    char        *path;
 
     new = malloc(sizeof(t_window42));
     if (!new)
@@ -39,10 +38,8 @@ t_window42  *window42_new(void *mlx, int sy, int sx)
         return (printf("erreur creation window\n"), free(new), NULL);
     new->height = sy;
     new->width = sx;
-    path = "./srcs/simple/imgs/bckg.xpm";
-    new->img_bckg = image42_new(new->height, new->width, path, mlx);
-    if (!new->img_bckg)
+    new->bg = image42_new(new->height, new->width, mlx);
+    if (!new->bg)
         return (printf("Erreur image de fond\n"), window42_free(new), NULL);
-    // mlx_put_image_to_window(mlx, new->win, new->img_bckg->ptr, 0, 0);
     return (new);
 }
