@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:05:04 by glions            #+#    #+#             */
-/*   Updated: 2024/03/13 15:37:51 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/14 14:52:35 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,14 @@ int	key_pressed(int keycode, t_game *g)
 {
 	if (keycode == XK_Escape)
 		return (mlx_loop_end(g->mlx), 1);
+	else if (keycode == XK_d || keycode == XK_D)
+		return (moove_right(g), 1);
+	else if (keycode == XK_a || keycode == XK_a || keycode == XK_q || keycode == XK_Q)
+		return (moove_left(g), 1);
+	else if (keycode == XK_w || keycode == XK_W || keycode == XK_z || keycode == XK_Z)
+		return (moove_top(g), 1);
+	else if (keycode == XK_s || keycode == XK_S)
+		return (moove_down(g), 1);
 	return (1);
 }
 
@@ -56,5 +64,10 @@ t_game	*game_new(t_parsing *p)
 	if (!new->win)
 		return (game_free(new), NULL);
 	new->map = p->map;
+	new->player = new_player(new);
+	if (!new->player)
+		return (printf("Erreur new_player\n"), game_free(new), NULL);
+	if (!draw_img(new))
+		return (printf("Erreur draw_img\n"), game_free(new), NULL);
 	return (new);
 }

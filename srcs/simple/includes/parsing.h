@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:28:27 by glions            #+#    #+#             */
-/*   Updated: 2024/03/13 15:43:13 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/14 10:35:38 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,13 +120,13 @@ void				update_mem(int **mem, int id);
 int					verif_mems(t_pos_algo **grid, t_map *m, int size);
 void				set_mem(int **mem, int id, int size);
 
-void				moove_right(t_list *o, t_parsing *p, t_list **item,
+void				moove_right_algo(t_list *o, t_parsing *p, t_list **item,
 						t_algo_verif *algo);
-void				moove_left(t_list *o, t_parsing *p, t_list **item,
+void				moove_left_algo(t_list *o, t_parsing *p, t_list **item,
 						t_algo_verif *algo);
-void				moove_top(t_list *o, t_parsing *p, t_list **item,
+void				moove_top_algo(t_list *o, t_parsing *p, t_list **item,
 						t_algo_verif *algo);
-void				moove_bot(t_list *o, t_parsing *p, t_list **item,
+void				moove_bot_algo(t_list *o, t_parsing *p, t_list **item,
 						t_algo_verif *algo);
 void				next_moove_item(t_list *o, t_list **i, t_algo_verif *a,
 						t_parsing *p);

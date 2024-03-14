@@ -6,13 +6,13 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 12:31:29 by glions            #+#    #+#             */
-/*   Updated: 2024/03/12 10:28:53 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/14 10:35:30 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/parsing.h"
 
-void	moove_right(t_list *o, t_parsing *p, t_list **item, t_algo_verif *algo)
+void	moove_right_algo(t_list *o, t_parsing *p, t_list **item, t_algo_verif *algo)
 {
 	int			i;
 	int			j;
@@ -40,7 +40,7 @@ void	moove_right(t_list *o, t_parsing *p, t_list **item, t_algo_verif *algo)
 	}
 }
 
-void	moove_left(t_list *o, t_parsing *p, t_list **item, t_algo_verif *algo)
+void	moove_left_algo(t_list *o, t_parsing *p, t_list **item, t_algo_verif *algo)
 {
 	int			i;
 	int			j;
@@ -68,7 +68,7 @@ void	moove_left(t_list *o, t_parsing *p, t_list **item, t_algo_verif *algo)
 	}
 }
 
-void	moove_top(t_list *o, t_parsing *p, t_list **item, t_algo_verif *algo)
+void	moove_top_algo(t_list *o, t_parsing *p, t_list **item, t_algo_verif *algo)
 {
 	int			i;
 	int			j;
@@ -96,7 +96,7 @@ void	moove_top(t_list *o, t_parsing *p, t_list **item, t_algo_verif *algo)
 	}
 }
 
-void	moove_bot(t_list *o, t_parsing *p, t_list **item, t_algo_verif *algo)
+void	moove_bot_algo(t_list *o, t_parsing *p, t_list **item, t_algo_verif *algo)
 {
 	int			i;
 	int			j;
@@ -126,8 +126,8 @@ void	moove_bot(t_list *o, t_parsing *p, t_list **item, t_algo_verif *algo)
 
 void	next_moove_item(t_list *o, t_list **i, t_algo_verif *a, t_parsing *p)
 {
-	moove_right(o, p, i, a);
-	moove_left(o, p, i, a);
-	moove_top(o, p, i, a);
-	moove_bot(o, p, i, a);
+	moove_right_algo(o, p, i, a);
+	moove_left_algo(o, p, i, a);
+	moove_top_algo(o, p, i, a);
+	moove_bot_algo(o, p, i, a);
 }

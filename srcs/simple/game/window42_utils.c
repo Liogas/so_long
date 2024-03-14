@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:22:05 by glions            #+#    #+#             */
-/*   Updated: 2024/03/13 11:05:31 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/14 10:38:04 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ t_window42  *window42_new(void *mlx, int sy, int sx)
         return (printf("erreur creation window\n"), free(new), NULL);
     new->height = sy;
     new->width = sx;
-    new->bg = image42_new(new->height, new->width, mlx);
-    if (!new->bg)
-        return (printf("Erreur image de fond\n"), window42_free(new), NULL);
+    new->bg = NULL;
     return (new);
 }
