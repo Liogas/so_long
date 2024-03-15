@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 12:14:48 by glions            #+#    #+#             */
-/*   Updated: 2024/03/13 15:37:02 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/15 14:11:35 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ void	free_grid(t_map_pos **g, t_map *m)
 			{
 				if (g[i][j].coord)
 					free(g[i][j].coord);
-				if (g[i][j].img_ptr)
-					image42_free(g[i][j].img_ptr);
 				j++;
 			}
 			if (g[i])
@@ -56,7 +54,6 @@ t_map_pos	new_map_pos(char c, int y, int x)
 		new.value = 3;
 	else if (c == 'P' || c == 'p')
 		new.value = 4;
-	new.img_ptr = NULL;
 	return (new);
 }
 

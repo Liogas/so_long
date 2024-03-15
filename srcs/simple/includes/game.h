@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 10:37:20 by glions            #+#    #+#             */
-/*   Updated: 2024/03/14 14:53:16 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/15 14:01:15 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 typedef struct s_player
 {
 	t_coord		*pos;
-	t_image42	*img;
 	int			nb_object;
 }				t_player;
 
@@ -39,14 +38,20 @@ typedef struct s_game
 	void		*mlx;
 	t_window42	*win;
 	t_map		*map;
+	t_image42	**img_wolf;
+	t_image42	**img_object;
+	t_image42	*img_floor;
+	t_image42	*img_exit;
 	t_player	*player;
+	int			draw;
 }				t_game;
 
 t_window42		*window42_new(void *mlx, int sy, int sx);
 void			window42_free(t_window42 *win);
 
 t_image42		*image42_file_new(int h, int w, char *path, void *mlx);
-void			image42_free(t_image42 *image);
+void			image42_free(t_image42 *image, int draw);
+void			imgs_free(t_image42 **imgs, int size, int draw);
 void			put_img_to_img(t_image42 *dst, t_image42 *src, int x, int y);
 void			put_pixel_img(t_image42 *img, int x, int y, int color);
 unsigned int	get_pixel_img(t_image42 *img, int x, int y);

@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 12:37:50 by glions            #+#    #+#             */
-/*   Updated: 2024/03/12 16:51:26 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/15 14:24:18 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ int	main(int ac, char **av)
 		return (1);
 	g = game_new(p);
 	if (!g)
-		return (printf("Erreur creation de la game\n"), free_parsing(p), 1);
-	if (!game_start(g))
-		return (write(1, "Fait chier !\n", 13), game_free(g), free_parsing(p), 1);
+		return (printf("Erreur creation de la game\n"), free_parsing(p, 1), 1);
+	// if (!game_start(g))
+	// 	return (write(1, "Fait chier !\n", 13), game_free(g), free_parsing(p), 1);
+	printf("Je suis ici\n");
 	game_free(g);
-	free_parsing(p);
+	free_parsing(p, 0);
 	return (0);
 }

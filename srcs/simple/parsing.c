@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:35:32 by glions            #+#    #+#             */
-/*   Updated: 2024/03/11 12:35:51 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/15 14:26:01 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ t_parsing	*parsing(char *path_file)
 	if (!data)
 		return (NULL);
 	if (data->error)
-		return (print_error_msg(data->error_msg), free_parsing(data), NULL);
+		return (print_error_msg(data->error_msg), free_parsing(data, 1), NULL);
 	if (!verif_winnable(data))
 		return (write(2, "Error\nImpossible de gagner sur cette map\n", 41),
-			free_parsing(data), NULL);
+			free_parsing(data, 1), NULL);
 	return (data);
 }

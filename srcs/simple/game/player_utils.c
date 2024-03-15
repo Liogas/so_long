@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 14:35:05 by glions            #+#    #+#             */
-/*   Updated: 2024/03/14 14:59:51 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/15 11:37:39 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,8 +107,6 @@ t_player	*new_player(t_game *game)
 	new = malloc(sizeof(t_player));
 	if (!new)
 		return (NULL);
-	new->img = image42_file_new(64, 64, "./srcs/simple/imgs/w_down.xpm",
-			game->mlx);
 	new->nb_object = 0;
 	i = -1;
 	while (++i < game->map->height)

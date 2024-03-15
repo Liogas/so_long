@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:28:27 by glions            #+#    #+#             */
-/*   Updated: 2024/03/14 10:35:38 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/15 14:25:38 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ typedef struct s_map_pos
 {
 	t_coord			*coord;
 	int				value;
-	t_image42		*img_ptr;
 }					t_map_pos;
 
 typedef struct s_map
@@ -82,7 +81,7 @@ typedef struct s_parsing
 
 t_parsing			*parsing(char *path_file);
 t_parsing			*new_parsing(char *path_file);
-void				free_parsing(t_parsing *p);
+void				free_parsing(t_parsing *p, int mode);
 
 t_map				*new_map(t_parsing *p);
 void				free_map(t_map *m);

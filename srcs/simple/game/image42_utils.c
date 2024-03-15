@@ -6,19 +6,31 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:51:25 by glions            #+#    #+#             */
-/*   Updated: 2024/03/14 14:14:41 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/15 15:26:10 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/game.h"
 
-void	image42_free(t_image42 *image)
+void	imgs_free(t_image42 **imgs, int size, int draw)
 {
-	if (image->ptr)
+	int	i;
+
+	(void)draw;
+	i = -1;
+	while (++i < size)
 	{
-		mlx_destroy_image(image->mlx, image->ptr);
-		free(image->ptr);
+		mlx_destroy_image(imgs[i]->mlx, imgs[i]->ptr);
+		free(imgs[i]);
 	}
+	free(imgs);
+}
+
+void	image42_free(t_image42 *image, int draw)
+{
+	(void)draw;
+	if (image->ptr)
+		mlx_destroy_image(image->mlx, image->ptr);
 	free(image);
 }
 

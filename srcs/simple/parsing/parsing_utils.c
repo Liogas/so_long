@@ -6,17 +6,17 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:37:33 by glions            #+#    #+#             */
-/*   Updated: 2024/03/12 10:29:20 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/15 14:23:56 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/parsing.h"
 
-void	free_parsing(t_parsing	*p)
+void	free_parsing(t_parsing	*p, int mode)
 {
 	if (p->file)
 		free_file42(p->file);
-	if (p->map)
+	if (p->map && mode)
 		free_map(p->map);
 	if (p->error_msg)
 		free(p->error_msg);
