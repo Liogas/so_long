@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:51:25 by glions            #+#    #+#             */
-/*   Updated: 2024/03/15 15:26:10 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/15 16:03:22 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,11 @@ void	imgs_free(t_image42 **imgs, int size, int draw)
 	i = -1;
 	while (++i < size)
 	{
-		mlx_destroy_image(imgs[i]->mlx, imgs[i]->ptr);
-		free(imgs[i]);
+		if (imgs[i]->ptr)
+		{
+			mlx_destroy_image(imgs[i]->mlx, imgs[i]->ptr);
+			free(imgs[i]);
+		}
 	}
 	free(imgs);
 }

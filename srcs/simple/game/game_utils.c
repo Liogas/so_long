@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:05:04 by glions            #+#    #+#             */
-/*   Updated: 2024/03/15 13:39:17 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/15 16:12:43 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,30 +34,50 @@ int	load_img_floor(t_game *game)
 	return (1);
 }
 
+t_image42	*load_img_wolf(t_game *game, int id)
+{
+	t_image42	*floor;
+	t_image42	*wolf;
+
+	floor = image42_file_new(64, 64, "./srcs/simple/imgs/floor.xpm", game->mlx);
+	wolf = NULL;
+	if (!floor)
+		return (printf("fjeijeijfe\n"), NULL);
+	if (id == 0)
+		wolf = image42_file_new(64, 64, "./srcs/simple/imgs/w_down.xpm", game->mlx);
+	else if (id == 1)
+		wolf = image42_file_new(64, 64, "./srcs/simple/imgs/w_top.xpm", game->mlx);
+	else if (id == 2)
+		wolf = image42_file_new(64, 64, "./srcs/simple/imgs/w_left.xpm", game->mlx);
+	else if (id == 3)
+		wolf = image42_file_new(64, 64, "./srcs/simple/imgs/w_right.xpm", game->mlx);
+	if (!wolf)
+		return (printf("Errreur ehufhwegihug\n"), image42_free(floor, 0), NULL);
+	put_img_to_img(floor, wolf, 0, 16);
+	mlx_destroy_image(game->mlx, wolf->ptr);
+	free(wolf);
+	return (floor);
+}
+
 int	load_imgs_wolf(t_game *game)
 {
 	t_image42	**images;
-	t_image42	*img;
 
 	images = malloc(4 * sizeof(t_image42 *));
 	if (!images)
 		return (0);
-	img = image42_file_new(64, 64, "./srcs/simple/imgs/w_down.xpm", game->mlx);
-	if (!img)
+	images[0] = load_img_wolf(game, 0);
+	if (!images[0])
 		return (0);
-	images[0] = img;
-	img = image42_file_new(64, 64, "./srcs/simple/imgs/w_left.xpm", game->mlx);
-	if (!img)
+	images[1] = load_img_wolf(game, 1);
+	if (!images[1])
 		return (0);
-	images[1] = img;
-	img = image42_file_new(64, 64, "./srcs/simple/imgs/w_right.xpm", game->mlx);
-	if (!img)
+	images[2] = load_img_wolf(game, 2);
+	if (!images[2])
 		return (0);
-	images[2] = img;
-	img = image42_file_new(64, 64, "./srcs/simple/imgs/w_top.xpm", game->mlx);
-	if (!img)
+	images[3] = load_img_wolf(game, 3);
+	if (!images[3])
 		return (0);
-	images[3] = img;
 	game->img_wolf = images;
 	return (1);
 }
