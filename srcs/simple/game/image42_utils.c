@@ -6,17 +6,16 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:51:25 by glions            #+#    #+#             */
-/*   Updated: 2024/03/15 16:03:22 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/17 19:38:55 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/game.h"
 
-void	imgs_free(t_image42 **imgs, int size, int draw)
+void	imgs_free(t_image42 **imgs, int size)
 {
 	int	i;
 
-	(void)draw;
 	i = -1;
 	while (++i < size)
 	{
@@ -29,9 +28,8 @@ void	imgs_free(t_image42 **imgs, int size, int draw)
 	free(imgs);
 }
 
-void	image42_free(t_image42 *image, int draw)
+void	image42_free(t_image42 *image)
 {
-	(void)draw;
 	if (image->ptr)
 		mlx_destroy_image(image->mlx, image->ptr);
 	free(image);
@@ -80,13 +78,14 @@ void	put_img_to_img(t_image42 *dst, t_image42 *src, int x, int y)
 	}
 }
 
-t_image42	*image42_new(int h, int w, void *mlx)
+t_image42	*image42_new(int w, int h, void *mlx)
 {
 	t_image42	*new;
 
 	new = malloc(sizeof(t_image42));
 	if (!new)
 		return (NULL);
+	new->mlx = mlx;
 	new->ptr = mlx_new_image(mlx, w, h);
 	if (!new->ptr)
 		return (printf("Erreur image (image42_new)\n"), free(new), NULL);

@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 10:37:20 by glions            #+#    #+#             */
-/*   Updated: 2024/03/15 14:01:15 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/17 20:04:56 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,25 +33,35 @@ typedef struct s_window42
 	t_image42	*bg;
 }				t_window42;
 
+typedef struct	s_draw
+{
+	t_image42	**img_wolf;
+	t_image42	**img_object;
+	t_image42	*img_floor;
+	t_image42	*img_exit;
+	t_image42	*img_exit_player;
+	int			nb_obj;
+	int			d_wolf;
+}	t_draw;
+
 typedef struct s_game
 {
 	void		*mlx;
 	t_window42	*win;
 	t_map		*map;
-	t_image42	**img_wolf;
-	t_image42	**img_object;
-	t_image42	*img_floor;
-	t_image42	*img_exit;
 	t_player	*player;
-	int			draw;
+	t_draw		*data_draw;
+	int			nb_dep;
+	int			nb_obj;
+	int			winner;
 }				t_game;
 
 t_window42		*window42_new(void *mlx, int sy, int sx);
 void			window42_free(t_window42 *win);
 
 t_image42		*image42_file_new(int h, int w, char *path, void *mlx);
-void			image42_free(t_image42 *image, int draw);
-void			imgs_free(t_image42 **imgs, int size, int draw);
+void			image42_free(t_image42 *image);
+void			imgs_free(t_image42 **imgs, int size);
 void			put_img_to_img(t_image42 *dst, t_image42 *src, int x, int y);
 void			put_pixel_img(t_image42 *img, int x, int y, int color);
 unsigned int	get_pixel_img(t_image42 *img, int x, int y);
@@ -65,9 +75,19 @@ int				show_map(t_game *game);
 int				draw_img(t_game *g);
 
 t_player		*new_player(t_game *game);
-void			moove_top(t_game *g);
-void			moove_down(t_game *g);
-void			moove_left(t_game *g);
-void			moove_right(t_game *g);
+void	moove(t_game *g, int dir);
+int			moove_top(t_game *g);
+int			moove_down(t_game *g);
+int			moove_left(t_game *g);
+int			moove_right(t_game *g);
+
+t_draw	*draw_new(void);
+void	draw_free(t_draw *draw);
+void	set_size_map(t_game *game);
+
+
+int	load_imgs(t_game *game);
+
+
 
 #endif

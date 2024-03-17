@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 16:41:13 by glions            #+#    #+#             */
-/*   Updated: 2024/03/15 16:06:07 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/17 20:09:19 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,73 +14,9 @@
 
 void	calc_pos(t_coord *c, int *y, int *x, t_game *g)
 {
-	*x = ((g->win->width - 300) + (40 * c->y)) - (40 * c->x);
-	*y = ((g->map->height_g / g->map->height) + (30 * c->y) + (40 * c->x));
+	*x = ((g->map->width_g - 84) + (40 * c->y)) - (40 * c->x);
+	*y = ((g->map->height_g + 20) + (30 * c->y) + (40 * c->x));
 }
-
-// int	draw_player(t_game *game)
-// {
-// 	int 		posx;
-// 	int 		posy;
-// 	t_image42	*img;
-
-// 	calc_pos(game->player->pos, &posy, &posx, game);
-// 	img = image42_file_new(64, 64, "./srcs/simple/imgs/w_down.xpm", game->mlx);
-// 	if (!img)
-// 		return (0);
-// 	img->posx = posx;
-// 	img->posy = posy;
-// 	put_img_to_img(game->win->bg, img, posx, posy - 10);
-// }
-
-// int	init_img(int value, t_game *game, int i, int j)
-// {
-// 	int			posx;
-// 	int			posy;
-// 	t_image42	*img;
-// 	t_image42	*tmp;
-
-// 	posx = ((game->win->width - 300) + (40 * i)) - (40 * j);
-// 	posy = ((game->map->height_g / game->map->height) + (30 * i) + (40 * j));
-// 	img = image42_file_new(64, 64, "./srcs/simple/imgs/floor.xpm", game->mlx);
-// 	if (!img)
-// 		return (printf("Erreur image init_img\n"), 0);
-// 	if (value == 2)
-// 	{
-// 		tmp = image42_file_new(64, 64, "./srcs/simple/imgs/s_1.xpm", game->mlx);
-// 		if (!tmp)
-// 			return (printf("Erreur chargement image cerf\n"), 0);
-// 		put_img_to_img(img, tmp, posx + 16, posy);
-// 	}
-// 	else if (value == 4 || value == 5)
-// 		put_img_to_img(img, game->player->img, posx, posy - 10);
-// 	img->posx = posx;
-// 	img->posy = posy;
-// 	game->map->grid[i][j].img_ptr = img;
-// 	return (1);
-// }
-
-// int	init_imgs(t_game *game)
-// {
-// 	int	i;
-// 	int	j;
-// 	int	value;
-
-// 	i = 0;
-// 	while (i < game->map->height)
-// 	{
-// 		j = 0;
-// 		while (j < game->map->width)
-// 		{
-// 			value = game->map->grid[i][j].value;
-// 			if (value != 1)
-// 				init_img(value, game, i, j);
-// 			j++;
-// 		}
-// 		i++;
-// 	}
-// 	return (1);
-// }
 
 void	set_size_map(t_game *game)
 {
@@ -90,72 +26,71 @@ void	set_size_map(t_game *game)
 				- 1));
 }
 
-void	draw_map(t_game *game)
+void	draw_obj(t_game *g, int y, int x, t_draw *data)
 {
-	(void)game;
-	// int			i;
-	// int			j;
-	// int			value;
-	// t_image42	*tmp;
-
-	// i = -1;
-	// while (++i < game->map->height)
-	// {
-	// 	j = game->map->width;
-	// 	while (--j >= 0)
-	// 	{
-	// 		value = game->map->grid[i][j].value;
-	// 		if (value != 1)
-	// 		{
-	// 			tmp 
-	// 			if (value == 2)
-
-	// 		}
-	// 	}
-	// }
-// int	startx;
-// int	starty;
-// int	value;
-// starty = game->map->height_g / game->map->height;
-// i = 0;
-// while (i < game->map->height)
-// {
-// 	startx = (game->win->width - 300) + (40 * i);
-// 	j = game->map->width - 1;
-// 	printf("j->%d\n", j);
-// 	while (j >= 0)
-// 	{
-// 		if (game->map->grid[i][j].img_ptr)
-// 		{
-// 			value = game->map->grid[i][j].value;
-// 			put_img_to_img(game->win->bg, game->map->grid[i][j].img_ptr,
-				// startx, starty);
-				// 			if (value == 2)
-				// 				put_img_to_img(game->win->bg,
-					// image42_file_new(64,64,"./srcs/simple/imgs/s_1.xpm",
-						// game->mlx), startx + 16, starty);
-					// 			else if (value == 4)
-					// 				put_img_to_img(game->win->bg,
-					// image42_file_new(64,64,"./srcs/simple/imgs/w_down.xpm",
-						// game->mlx), startx, starty - 10);
-					// 			else if (value == 1)
-					// 				put_img_to_img(game->win->bg,
-					// image42_file_new(64,64,"./srcs/simple/imgs/water.xpm",
-						// game->mlx), startx, starty - 10);
-					// 		}
-					// 		startx -= 40;
-					// 		starty += 20;
-					// 		j--;
-					// 	}
-					// 	starty = (game->map->height_g / game->map->height)
-					// +(30 * i);
-					// 	i++;
-					// }
+	put_img_to_img(g->win->bg, g->data_draw->img_object[data->nb_obj], x, y);
+	data->nb_obj += 1;
+	if (data->nb_obj >= 3)
+		data->nb_obj = 0;
 }
 
+void	draw_player(t_game *g, int y, int x, int d)
+{
+	put_img_to_img(g->win->bg, g->data_draw->img_wolf[d], x, y);
+}
+
+void	draw_exit(t_game *g, int y, int x)
+{
+	put_img_to_img(g->win->bg, g->data_draw->img_exit, x, y);
+}
+
+void	draw_floor(t_game *g, int y, int x)
+{
+	put_img_to_img(g->win->bg, g->data_draw->img_floor, x, y);
+}
+
+void	draw_exit_player(t_game *g, int y, int x)
+{
+	put_img_to_img(g->win->bg, g->data_draw->img_exit_player, x, y);
+}
+
+void	draw_map(t_game *game)
+{
+	int	i;
+	int	j;
+	int	posx;
+	int	posy;
+
+	i = -1;
+	while (++i < game->map->height)
+	{
+		posy = 20 * i;
+		posx = (game->win->width - 84) - (30 * (game->map->height - i - 1));
+		j = game->map->width;
+		while (--j >= 0)
+		{
+			if (game->map->grid[i][j].value == 2)
+				draw_obj(game, posy, posx, game->data_draw);
+			else if (game->map->grid[i][j].value == 3)
+				draw_exit(game, posy, posx);
+			else if (game->map->grid[i][j].value == 4)
+				draw_player(game, posy, posx, game->data_draw->d_wolf);
+			else if (game->map->grid[i][j].value == 0)
+				draw_floor(game, posy, posx);
+			else if (game->map->grid[i][j].value == 5)
+				draw_exit_player(game, posy, posx);
+			posx -= 35;
+			posy += 20;
+		}
+	}
+}
 int	show_map(t_game *game)
 {
-	set_size_map(game);
+	if (game->winner)
+		return (0);
+	game->win->bg = image42_new(game->win->width, game->win->height, game->mlx);
+	if (!game->win->bg)
+		return (0);
 	draw_map(game);
 	mlx_put_image_to_window(game->mlx, game->win->win, game->win->bg->ptr, 0,
 		0);
