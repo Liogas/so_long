@@ -13,10 +13,11 @@ SRCS_VALIDATOR_MAP	=	$(PATH_VALIDATOR_MAP)/models/*.c \
 						$(PATH_VALIDATOR_MAP)/views/*.c \
 						$(PATH_VALIDATOR_MAP)/controllers/*.c
 
-PATH_SRCS			=	srcs/so_long
-SRCS				=	$(PATH_SRCS)/controller/*.c \
-						$(PATH_SRCS)/model/*/*.c \
-						$(PATH_SRCS)/view/*/*.c \
+PATH_SRCS			=	srcs/core
+SRCS				=	$(PATH_SRCS)/*.c \
+						$(PATH_SRCS)/game/*.c \
+						$(PATH_SRCS)/parsing/*.c \
+						$(PATH_SRCS)/parsing/*/*.c \
 
 PATH_GNL			=	srcs/gnl
 SRCS_GNL			=	$(PATH_GNL)/*.c \
@@ -33,14 +34,6 @@ AR					=	ar -rcsv
 
 MAP_TEST			= 	./srcs/maps/map2.ber
 
-TEST_GRAPH			= 	test_g
-SRCS_TEST			= 	test/*.c
-
-SRCS_MANDATORY		= 	srcs/simple/*.c \
-						srcs/simple/*/*.c \
-						srcs/simple/*/*/*.c
-MANDATORY			= 	mandatory
-
 all: $(NAME)
 
 $(LIBFT):
@@ -50,16 +43,10 @@ $(MINILIBX):
 	@make -C srcs/minilibx/
 
 $(NAME): $(LIBFT) $(MINILIBX)
-	@$(CC) -g3 -o $(NAME) $(CFLAGS) $(SRCS_VALIDATOR_MAP) $(SRCS_FILE42) $(SRCS_GNL) $(SRCS_PRINTF) -L./srcs/libs -lft -L./srcs/minilibx -lmlx_Linux -lXext -lX11 -lm
-
-$(TEST_GRAPH):
-	$(CC) $(CFLAGS) -g3 -o $(TEST_GRAPH) $(SRCS_TEST) -L./srcs/minilibx -lmlx -lXext -lX11 -lm
-
-$(MANDATORY): $(LIBFT) $(MINILIBX)
-	$(CC) $(CFLAGS) -g3 -o $(MANDATORY) $(SRCS_MANDATORY) $(SRCS_FILE42) $(SRCS_GNL) $(SRCS_PRINTF) -L./srcs/libs -lft -L./srcs/minilibx -lmlx -lXext -lX11 -lm
+	@$(CC) -g3 -o $(NAME) $(CFLAGS) $(SRCS) $(SRCS_FILE42) $(SRCS_GNL) $(SRCS_PRINTF) -L./srcs/libs -lft -L./srcs/minilibx -lmlx_Linux -lXext -lX11 -lm
 	
 clean:
-	rm -f srcs/*/*.o srcs/*/*/*.o srcs/*/*/*/*.o
+	rm -f $(PATH_SRCS)/game/*.o $(PATH_SRCS)/parsing/*.o $(PATH_SRCS)/parsing/algo_verif/*.o
 
 fclean: clean
 	rm -f srcs/libs/*.a *.out $(NAME)
