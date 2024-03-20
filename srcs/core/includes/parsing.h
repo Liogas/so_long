@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:28:27 by glions            #+#    #+#             */
-/*   Updated: 2024/03/15 14:25:38 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/20 12:21:28 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,23 @@
 
 typedef struct s_image42
 {
-	void		*ptr;
-	int			width;
-	int			height;
-	int			posx;
-	int			posy;
-	void		*mlx;
-	char		*addr;
-	int			bpp;
-	int			endian;
-	int			line_len;
-}				t_image42;
+	void			*ptr;
+	int				width;
+	int				height;
+	int				posx;
+	int				posy;
+	void			*mlx;
+	char			*addr;
+	int				bpp;
+	int				endian;
+	int				line_len;
+}					t_image42;
 
 typedef struct s_coord
 {
 	int				x;
 	int				y;
-}   t_coord;
+}					t_coord;
 
 typedef struct s_map_pos
 {

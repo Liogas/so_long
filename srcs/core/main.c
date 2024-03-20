@@ -6,11 +6,27 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 12:37:50 by glions            #+#    #+#             */
-/*   Updated: 2024/03/18 11:05:18 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/20 12:15:06 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/game.h"
+
+void	verif_win(t_game *g)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while (++i < g->map->height)
+	{
+		j = -1;
+		while (++j < g->map->width)
+			if (g->map->grid[i][j].value == 2)
+				return ;
+	}
+	g->winner = 1;
+}
 
 int	main(int ac, char **av)
 {

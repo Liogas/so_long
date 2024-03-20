@@ -6,13 +6,14 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 12:31:29 by glions            #+#    #+#             */
-/*   Updated: 2024/03/14 10:35:30 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/20 12:16:56 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/parsing.h"
 
-void	moove_right_algo(t_list *o, t_parsing *p, t_list **item, t_algo_verif *algo)
+void	moove_right_algo(t_list *o, t_parsing *p, t_list **item,
+		t_algo_verif *algo)
 {
 	int			i;
 	int			j;
@@ -40,7 +41,8 @@ void	moove_right_algo(t_list *o, t_parsing *p, t_list **item, t_algo_verif *algo
 	}
 }
 
-void	moove_left_algo(t_list *o, t_parsing *p, t_list **item, t_algo_verif *algo)
+void	moove_left_algo(t_list *o, t_parsing *p, t_list **item,
+		t_algo_verif *algo)
 {
 	int			i;
 	int			j;
@@ -68,7 +70,8 @@ void	moove_left_algo(t_list *o, t_parsing *p, t_list **item, t_algo_verif *algo)
 	}
 }
 
-void	moove_top_algo(t_list *o, t_parsing *p, t_list **item, t_algo_verif *algo)
+void	moove_top_algo(t_list *o, t_parsing *p, t_list **item,
+		t_algo_verif *algo)
 {
 	int			i;
 	int			j;
@@ -96,7 +99,8 @@ void	moove_top_algo(t_list *o, t_parsing *p, t_list **item, t_algo_verif *algo)
 	}
 }
 
-void	moove_bot_algo(t_list *o, t_parsing *p, t_list **item, t_algo_verif *algo)
+void	moove_bot_algo(t_list *o, t_parsing *p, t_list **item,
+		t_algo_verif *algo)
 {
 	int			i;
 	int			j;

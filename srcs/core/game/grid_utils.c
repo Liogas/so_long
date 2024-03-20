@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 12:14:48 by glions            #+#    #+#             */
-/*   Updated: 2024/03/15 14:11:35 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/20 12:09:56 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,25 +56,6 @@ t_map_pos	new_map_pos(char c, int y, int x)
 		new.value = 4;
 	return (new);
 }
-
-// void	print_grid(t_map *m)
-// {
-// 	int	i;
-// 	int	j;
-
-// 	i = 0;
-// 	while (i < m->height)
-// 	{
-// 		j = 0;
-// 		while (j < m->width)
-// 		{
-// 			printf("%2d", m->grid[i][j].value);
-// 			j++;
-// 		}
-// 		printf("\n");
-// 		i++;
-// 	}
-// }
 
 t_map_pos	**init_grid(t_parsing *p, t_map **m)
 {

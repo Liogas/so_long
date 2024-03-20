@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 17:42:55 by glions            #+#    #+#             */
-/*   Updated: 2024/03/18 10:53:39 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/20 12:03:10 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	draw_free(t_draw *draw)
 			image42_free(draw->img_floor);
 		if (draw->img_exit_player)
 			image42_free(draw->img_exit_player);
+		if (draw->img_floor)
+			image42_free(draw->img_food);
 		free(draw);
 	}
 }
@@ -33,7 +35,7 @@ void	draw_free(t_draw *draw)
 t_draw	*draw_new(void)
 {
 	t_draw	*new;
-	
+
 	new = malloc(sizeof(t_draw));
 	if (!new)
 		return (NULL);
@@ -44,5 +46,7 @@ t_draw	*draw_new(void)
 	new->img_floor = NULL;
 	new->img_wolf = NULL;
 	new->img_object = NULL;
+	new->img_food = NULL;
+	new->imgs_number = NULL;
 	return (new);
 }

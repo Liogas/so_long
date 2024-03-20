@@ -6,13 +6,13 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:37:33 by glions            #+#    #+#             */
-/*   Updated: 2024/03/15 14:23:56 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/20 12:17:40 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/parsing.h"
 
-void	free_parsing(t_parsing	*p, int mode)
+void	free_parsing(t_parsing *p, int mode)
 {
 	if (p->file)
 		free_file42(p->file);

@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:34:22 by glions            #+#    #+#             */
-/*   Updated: 2024/03/12 10:29:03 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/20 12:17:22 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,24 +30,6 @@ void	free_grid_algo(t_pos_algo **grid, t_parsing *p)
 	}
 	free(grid);
 }
-
-// void	print_grid_algo(t_pos_algo **grid, t_map *m, int size_items)
-// {
-// 	int	i;
-// 	int	j;
-
-// 	i = -1;
-// 	printf("Affichage de grid_algo\n");
-// 	while (++i < m->height)
-// 	{
-// 		j = -1;
-// 		while (++j < m->width)
-// 		{
-// 			printf("GRID[%d][%d]\n", i, j);
-// 			print_mem(grid[i][j].mem, size_items);
-// 		}
-// 	}
-// }
 
 int	search_id(t_list *items, t_coord *c)
 {

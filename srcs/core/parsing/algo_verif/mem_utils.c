@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:56:15 by glions            #+#    #+#             */
-/*   Updated: 2024/03/12 10:28:48 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/20 12:16:48 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,21 +38,6 @@ int	verif_mems(t_pos_algo **grid, t_map *m, int size)
 	}
 	return (0);
 }
-
-// void	print_mem(int *mem, int size)
-// {
-// 	int	i;
-
-// 	i = -1;
-// 	printf("[");
-// 	while (++i < size)
-// 	{
-// 		printf("%d", mem[i]);
-// 		if (i < size - 1)
-// 			printf(";");
-// 	}
-// 	printf("]\n");
-// }
 
 void	set_mem(int **mem, int id, int size)
 {

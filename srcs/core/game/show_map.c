@@ -6,11 +6,25 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 16:41:13 by glions            #+#    #+#             */
-/*   Updated: 2024/03/17 20:09:19 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/20 12:20:03 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/game.h"
+
+void	draw_score(t_game *game)
+{
+	char	*nb;
+
+	nb = ft_itoa(game->nb_dep - 1);
+	mlx_string_put(game->mlx, game->win->win, 20, game->win->height - 5,
+		0x000000, nb);
+	free(nb);
+	nb = ft_itoa(game->nb_dep);
+	mlx_string_put(game->mlx, game->win->win, 20, game->win->height - 5,
+		0xFFFF00, nb);
+	free(nb);
+}
 
 void	calc_pos(t_coord *c, int *y, int *x, t_game *g)
 {
@@ -34,64 +48,18 @@ void	draw_obj(t_game *g, int y, int x, t_draw *data)
 		data->nb_obj = 0;
 }
 
-void	draw_player(t_game *g, int y, int x, int d)
-{
-	put_img_to_img(g->win->bg, g->data_draw->img_wolf[d], x, y);
-}
-
-void	draw_exit(t_game *g, int y, int x)
-{
-	put_img_to_img(g->win->bg, g->data_draw->img_exit, x, y);
-}
-
-void	draw_floor(t_game *g, int y, int x)
-{
-	put_img_to_img(g->win->bg, g->data_draw->img_floor, x, y);
-}
-
-void	draw_exit_player(t_game *g, int y, int x)
-{
-	put_img_to_img(g->win->bg, g->data_draw->img_exit_player, x, y);
-}
-
-void	draw_map(t_game *game)
-{
-	int	i;
-	int	j;
-	int	posx;
-	int	posy;
-
-	i = -1;
-	while (++i < game->map->height)
-	{
-		posy = 20 * i;
-		posx = (game->win->width - 84) - (30 * (game->map->height - i - 1));
-		j = game->map->width;
-		while (--j >= 0)
-		{
-			if (game->map->grid[i][j].value == 2)
-				draw_obj(game, posy, posx, game->data_draw);
-			else if (game->map->grid[i][j].value == 3)
-				draw_exit(game, posy, posx);
-			else if (game->map->grid[i][j].value == 4)
-				draw_player(game, posy, posx, game->data_draw->d_wolf);
-			else if (game->map->grid[i][j].value == 0)
-				draw_floor(game, posy, posx);
-			else if (game->map->grid[i][j].value == 5)
-				draw_exit_player(game, posy, posx);
-			posx -= 35;
-			posy += 20;
-		}
-	}
-}
 int	show_map(t_game *game)
 {
+	int	pos[2];
+
 	if (game->winner)
 		return (0);
-	game->win->bg = image42_new(game->win->width, game->win->height, game->mlx);
+	game->win->bg = image42_new(game->win->width, game->win->height - 15,
+			game->mlx);
 	if (!game->win->bg)
 		return (0);
-	draw_map(game);
+	draw_map(game, pos);
+	draw_score(game);
 	mlx_put_image_to_window(game->mlx, game->win->win, game->win->bg->ptr, 0,
 		0);
 	return (1);

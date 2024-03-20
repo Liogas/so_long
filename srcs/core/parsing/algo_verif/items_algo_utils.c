@@ -6,47 +6,11 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:39:54 by glions            #+#    #+#             */
-/*   Updated: 2024/03/12 10:28:43 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/20 12:16:40 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/parsing.h"
-
-// void	print_list(t_list *list)
-// {
-// 	t_list	*e;
-// 	t_coord	*data;
-
-// 	e = list;
-// 	while (e)
-// 	{
-// 		data = e->content;
-// 		printf("[%d;%d]\n", data->y, data->x);
-// 		e = e->next;
-// 	}
-// }
-
-// void	print_items(t_list *items)
-// {
-// 	t_list		*item;
-// 	t_item_algo	*data;
-
-// 	item = items;
-// 	printf("Liste de mes items :\n");
-// 	while (item)
-// 	{
-// 		data = item->content;
-// 		printf("ID->%d\n", data->id);
-// 		printf("OPEN :\n");
-// 		print_list(data->open);
-// 		printf("CLOSE :\n");
-// 		print_list(data->close);
-// 		printf("TRASH\n");
-// 		print_list(data->trash);
-// 		item = item->next;
-// 		printf("\n");
-// 	}
-// }
 
 void	free_list(t_list *lst)
 {
