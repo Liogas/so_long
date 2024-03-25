@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:05:04 by glions            #+#    #+#             */
-/*   Updated: 2024/03/20 12:19:18 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/25 16:43:43 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	game_free(t_game *game)
 	free(game);
 }
 
-int	key_pressed(int keycode, t_game *g)
+static int	key_pressed(int keycode, t_game *g)
 {
 	if (keycode == XK_d || keycode == XK_D)
 		moove(g, 3);
@@ -42,7 +42,9 @@ int	key_pressed(int keycode, t_game *g)
 		moove(g, 0);
 	else if (keycode == XK_s || keycode == XK_S)
 		moove(g, 1);
-	if (keycode == XK_Escape || g->winner)
+	else if (keycode == XK_Escape)
+		return (close_window(g));
+	if (g->winner)
 		return (mlx_loop_end(g->mlx), 1);
 	return (1);
 }
@@ -52,11 +54,12 @@ int	game_start(t_game *g)
 	if (!show_map(g))
 		return (0);
 	mlx_key_hook(g->win->win, &key_pressed, g);
+	mlx_hook(g->win->win, 17, 0, &close_window, g);
 	mlx_loop(g->mlx);
 	return (1);
 }
 
-int	game_setup(t_game *g)
+static int	game_setup(t_game *g)
 {
 	set_size_map(g);
 	g->win = window42_new(g->mlx, g->map->height_g + 150, g->map->width_g

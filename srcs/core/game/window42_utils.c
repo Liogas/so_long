@@ -6,11 +6,17 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:22:05 by glions            #+#    #+#             */
-/*   Updated: 2024/03/20 12:15:51 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/25 16:44:13 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/game.h"
+
+int	close_window(t_game *g)
+{
+	write(1, "Bah alors on abandonne ?!\n", 26);
+	return (mlx_loop_end(g->mlx), 1);
+}
 
 void	window42_free(t_window42 *win)
 {

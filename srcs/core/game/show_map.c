@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 16:41:13 by glions            #+#    #+#             */
-/*   Updated: 2024/03/20 12:20:03 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/25 16:33:27 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	draw_score(t_game *game)
 	free(nb);
 	nb = ft_itoa(game->nb_dep);
 	mlx_string_put(game->mlx, game->win->win, 20, game->win->height - 5,
-		0xFFFF00, nb);
+		0xFFFFFF, nb);
 	free(nb);
 }
 

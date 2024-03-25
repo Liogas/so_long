@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 10:37:20 by glions            #+#    #+#             */
-/*   Updated: 2024/03/20 12:13:16 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/25 16:38:38 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ typedef struct s_game
 
 t_window42		*window42_new(void *mlx, int sy, int sx);
 void			window42_free(t_window42 *win);
+int				close_window(t_game *g);
 
 t_image42		*image42_file_new(int h, int w, char *path, void *mlx);
 void			image42_free(t_image42 *image);
