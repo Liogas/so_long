@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 10:37:20 by glions            #+#    #+#             */
-/*   Updated: 2024/03/25 16:38:38 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/26 14:08:44 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 # include "../../minilibx/mlx_int.h"
 # include "./parsing.h"
 # include <X11/keysym.h>
+
+# ifndef BONUS
+#  define BONUS 0
+# endif
 
 typedef struct s_player
 {
@@ -73,7 +77,6 @@ int				game_start(t_game *g);
 void			verif_win(t_game *g);
 
 int				show_map(t_game *game);
-int				draw_img(t_game *g);
 void			draw_score(t_game *game);
 void			draw_map(t_game *game, int pos[2]);
 void			draw_obj(t_game *g, int y, int x, t_draw *data);

@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 16:41:13 by glions            #+#    #+#             */
-/*   Updated: 2024/03/25 16:33:27 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/26 14:02:13 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,9 @@ void	draw_score(t_game *game)
 	free(nb);
 }
 
-void	calc_pos(t_coord *c, int *y, int *x, t_game *g)
-{
-	*x = ((g->map->width_g - 84) + (40 * c->y)) - (40 * c->x);
-	*y = ((g->map->height_g + 20) + (30 * c->y) + (40 * c->x));
-}
-
 void	set_size_map(t_game *game)
 {
-	game->map->width_g = (64 * game->map->width) - (24 * (game->map->width
-				- 1));
+	game->map->width_g = 43 * game->map->width;
 	game->map->height_g = (64 * game->map->height) - (20 * (game->map->height
 				- 1));
 }
@@ -59,7 +52,8 @@ int	show_map(t_game *game)
 	if (!game->win->bg)
 		return (0);
 	draw_map(game, pos);
-	draw_score(game);
+	if (BONUS)
+		draw_score(game);
 	mlx_put_image_to_window(game->mlx, game->win->win, game->win->bg->ptr, 0,
 		0);
 	return (1);

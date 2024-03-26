@@ -6,14 +6,13 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 14:29:11 by glions            #+#    #+#             */
-/*   Updated: 2024/02/09 10:56:23 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/26 13:47:57 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef	FILE42_H
 # define	FILE42_H
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <sys/types.h>
 # include <sys/stat.h>
@@ -21,7 +20,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "../../libft/includes/libft.h"
-# include "../../ft_printf/includes/ft_printf.h"
 # include "../../gnl/includes/get_next_line.h"
 
 typedef struct s_file42

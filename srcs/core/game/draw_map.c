@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 11:41:21 by glions            #+#    #+#             */
-/*   Updated: 2024/03/20 12:14:56 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/25 17:46:37 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	draw_map(t_game *game, int pos[2])
 	while (++i < game->map->height)
 	{
 		pos[0] = 20 * i;
-		pos[1] = (game->win->width - 84) - (30 * (game->map->height - i - 1));
+		pos[1] = (game->win->width - 84) - (31 * (game->map->height - (i + 1)));
 		j = game->map->width;
 		while (--j >= 0)
 		{
@@ -55,8 +55,8 @@ void	draw_map(t_game *game, int pos[2])
 				draw_floor(game, pos[0], pos[1]);
 			else if (game->map->grid[i][j].value == 5)
 				draw_exit_player(game, pos[0], pos[1]);
-			pos[0] += 20;
-			pos[1] -= 35;
+			pos[0] += 18;
+			pos[1] -= 31;
 		}
 	}
 }

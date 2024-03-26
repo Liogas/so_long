@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 09:45:54 by glions            #+#    #+#             */
-/*   Updated: 2024/03/20 12:20:59 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/26 14:03:09 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,12 +133,13 @@ void	moove(t_game *g, int dir)
 	{
 		g->nb_dep += 1;
 		if (g->winner)
-			ft_printf("GOOD JOB -> %d\n", g->nb_dep);
+			(ft_putstr_fd("GOOD JOB (", 1), ft_putnbr_fd(g->nb_dep, 1),
+				ft_putstr_fd(")\n", 1));
 		else
 		{
-			ft_printf("%d\n", g->nb_dep);
-			image42_free(g->win->bg);
-			show_map(g);
+			if (BONUS == 0)
+				(ft_putnbr_fd(g->nb_dep, 1), ft_putchar_fd('\n', 1));
+			(image42_free(g->win->bg), show_map(g));
 		}
 	}
 }
