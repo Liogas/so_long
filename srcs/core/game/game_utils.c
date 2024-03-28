@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:05:04 by glions            #+#    #+#             */
-/*   Updated: 2024/03/25 17:02:23 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/28 12:25:10 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static int	game_setup(t_game *g)
 {
 	set_size_map(g);
 	g->win = window42_new(g->mlx, g->map->height_g + 150, g->map->width_g
-			+ 150);
+			+ 164);
 	if (!g->win)
 		return (game_free(g), 0);
 	g->data_draw = draw_new();

@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 16:41:13 by glions            #+#    #+#             */
-/*   Updated: 2024/03/26 14:02:13 by glions           ###   ########.fr       */
+/*   Updated: 2024/03/28 12:28:45 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,8 @@ void	draw_score(t_game *game)
 
 void	set_size_map(t_game *game)
 {
-	game->map->width_g = 43 * game->map->width;
-	game->map->height_g = (64 * game->map->height) - (20 * (game->map->height
-				- 1));
+	game->map->width_g = 18 * game->map->height + 35 * game->map->width;
+	game->map->height_g = 20 * game->map->height + (18 * game->map->width);
 }
 
 void	draw_obj(t_game *g, int y, int x, t_draw *data)

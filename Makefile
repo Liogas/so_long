@@ -66,4 +66,4 @@ fclean: clean
 
 re:	fclean $(NAME)
 
-.PHONY:	all clean fclean so_long re
+.PHONY:	all clean fclean re
