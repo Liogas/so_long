@@ -6,11 +6,11 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 08:53:51 by glions            #+#    #+#             */
-/*   Updated: 2024/04/11 10:48:48 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/24 20:31:19 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "gl_libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

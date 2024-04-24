@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 08:57:41 by glions            #+#    #+#             */
-/*   Updated: 2024/04/24 20:31:10 by glions           ###   ########.fr       */
+/*   Created: 2024/04/24 21:54:03 by glions            #+#    #+#             */
+/*   Updated: 2024/04/24 22:53:00 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "gl_libft.h"
+#include "so_long.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	free_map(t_map *map)
 {
-	char	*new_s;
-	int		i;
-	int		j;
+	if (!map)
+		return ;
+	if (map->tab)
+		ft_free_tab2D_int_gl(map->tab, map->height);
+	free(map);
+}
 
-	if (!s1 || !s2)
+t_map	*new_map(int height, int width)
+{
+	t_map	*new;
+	int		i;
+
+	new = malloc(sizeof(t_map));
+	if (!new)
 		return (NULL);
-	new_s = (char *)malloc((ft_strlen((char *)s1)
-				+ ft_strlen((char *)s2) + 1) * sizeof(char));
-	if (!new_s)
-		return (NULL);
+	new->width = width;
+	new->height = height;
+	new->tab = malloc(height * sizeof(int *));
+	if (!new->tab)
+		return (free(new), NULL);
 	i = -1;
-	j = 0;
-	while (s1[++i] != '\0')
-	{
-		new_s[j] = s1[i];
-		j++;
-	}
-	i = -1;
-	while (s2[++i] != '\0')
-	{
-		new_s[j] = s2[i];
-		j++;
-	}
-	new_s[j] = '\0';
-	return (new_s);
+	while (++i < height)
+		new->tab[i] = NULL;
+	return (new);
 }

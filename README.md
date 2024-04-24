@@ -1,10 +1,10 @@
 # so_long
 
-# DERNIER PUSH (24/04/2024:20:19)
-- Départ pour une refonte du jeu, avec l'utilisation des fonctions de la gl_mlx
+# DERNIER PUSH (24/04/2024:23:11)
+- Parsing presque fonctionnel : manque la vérification de map, faire avec flood_fill
 
 # PRIORITE
-- Refaire un parsing
+- Refaire un parsing (EN COURS)
 - Affichage basique de la map
 
 # A REVOIR

@@ -6,11 +6,11 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 09:03:32 by glions            #+#    #+#             */
-/*   Updated: 2024/04/11 09:40:42 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/24 20:29:36 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "gl_libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

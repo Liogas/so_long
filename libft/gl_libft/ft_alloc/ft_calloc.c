@@ -6,11 +6,11 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 17:53:32 by glions            #+#    #+#             */
-/*   Updated: 2024/04/13 17:50:31 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/24 20:35:16 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "gl_libft.h"
 
 void	*ft_calloc(size_t elementCount, size_t elementSize)
 {

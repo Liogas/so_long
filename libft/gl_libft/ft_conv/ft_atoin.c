@@ -6,11 +6,11 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 12:52:27 by glions            #+#    #+#             */
-/*   Updated: 2024/04/11 09:39:15 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/24 20:32:12 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "gl_libft.h"
 
 int	ft_atoin(const char *nptr, int end)
 {

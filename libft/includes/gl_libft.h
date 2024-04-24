@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   gl_libft.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 11:52:49 by glions            #+#    #+#             */
-/*   Updated: 2024/04/19 11:51:13 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/24 22:37:55 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef GL_LIBFT_H
+# define GL_LIBFT_H
 
-# include <unistd.h>
-# include <stdlib.h>
 # include <limits.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 // CHAR
 int		ft_isalpha(int c);
@@ -35,6 +35,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 
 // STR
 size_t	ft_strlen(char *str);
+int		ft_strlen_stop_c(char *str, char c);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
@@ -71,7 +72,10 @@ void	ft_putnbr_u_fd(unsigned int n, int fd);
 void	ft_putnbr_hex_fd(long long n, int fd, int upper);
 void	ft_putptr_hex_fd(unsigned long long n, int fd);
 
-// ALLOCATION MEMORY
+// ALLOC MEMORY
 void	*ft_calloc(size_t elementCount, size_t elementSize);
+
+// FREE
+void	ft_free_tab2D_int_gl(int **tab, int height);
 
 #endif

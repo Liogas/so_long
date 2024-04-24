@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_free_tab2D_int_gl.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 14:50:58 by glions            #+#    #+#             */
-/*   Updated: 2024/04/24 20:31:02 by glions           ###   ########.fr       */
+/*   Created: 2024/04/24 21:59:03 by glions            #+#    #+#             */
+/*   Updated: 2024/04/24 23:01:00 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "gl_libft.h"
 
-char	*ft_strdup(char *src)
+void	ft_free_tab2D_int_gl(int **tab, int height)
 {
-	int		i;
-	char	*dest;
+	int	i;
 
-	dest = NULL;
-	if (!src)
-		return (ft_calloc(1, sizeof(char)));
+	if (!tab)
+		return ;
 	i = 0;
-	while (src[i] != '\0')
-		i++;
-	dest = malloc((i + 1) * sizeof(char));
-	if (!dest)
-		return (NULL);
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = 0;
-	return (dest);
+	while (i < height && tab[i])
+		free(tab[i++]);
+	free(tab);
 }

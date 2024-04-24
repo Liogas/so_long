@@ -6,11 +6,11 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 08:56:56 by glions            #+#    #+#             */
-/*   Updated: 2024/04/11 09:39:03 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/24 20:32:16 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "gl_libft.h"
 
 static int	ft_itoa_len(int n)
 {

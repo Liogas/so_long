@@ -5,7 +5,7 @@ CFLAGS			=	-Wall -Werror -Wextra -g3
 LIB				=	./lib/libft.a
 
 PATH_GAME		=	srcs/
-SRCS_GAME		=	srcs/main.c
+SRCS_GAME		=	$(PATH_GAME)main.c $(PATH_GAME)map.c $(PATH_GAME)parsing/parsing.c $(PATH_GAME)parsing/parsing_utils.c
 OBJS_GAME		=	$(SRCS_GAME:.c=.o)
 NAME			=	so_long
 MINILIBX		=	./libft/gl_mlx/minilibx/libmlx_Linux.a
@@ -20,7 +20,7 @@ $(NAME): $(LIB) $(MINILIBX) $(OBJS_GAME)
 	@echo "MINILIBX ✅"
 	@echo "LIBFT    ✅"
 	@echo "SO_LONG  ❌"
-	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS_GAME) $(LIB) $(MINILIBX) $(INCLUDES) -lXext -lX11 -lm
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS_GAME) $(LIB) $(INCLUDES) $(MINILIBX)  -lXext -lX11 -lm
 	@clear
 	@echo "MINILIBX ✅"
 	@echo "LIBFT    ✅"

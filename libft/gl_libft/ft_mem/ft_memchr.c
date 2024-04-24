@@ -6,11 +6,11 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 09:03:16 by glions            #+#    #+#             */
-/*   Updated: 2024/04/11 09:40:53 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/24 20:29:52 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "gl_libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

@@ -6,11 +6,11 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 10:39:47 by glions            #+#    #+#             */
-/*   Updated: 2024/04/11 09:42:14 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/24 20:32:53 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "gl_libft.h"
 
 void	ft_putnbr_u_fd(unsigned int n, int fd)
 {

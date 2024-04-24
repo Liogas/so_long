@@ -1,37 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   parsing_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 14:50:58 by glions            #+#    #+#             */
-/*   Updated: 2024/04/24 20:31:02 by glions           ###   ########.fr       */
+/*   Created: 2024/04/24 21:07:16 by glions            #+#    #+#             */
+/*   Updated: 2024/04/24 23:10:15 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "gl_libft.h"
+#include "so_long.h"
 
-char	*ft_strdup(char *src)
+int	c_is_valid(char c)
 {
-	int		i;
-	char	*dest;
-
-	dest = NULL;
-	if (!src)
-		return (ft_calloc(1, sizeof(char)));
-	i = 0;
-	while (src[i] != '\0')
-		i++;
-	dest = malloc((i + 1) * sizeof(char));
-	if (!dest)
-		return (NULL);
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = 0;
-	return (dest);
+	return (c == '0' || c == '1' || c == 'E' || c == 'C' || c == 'P' || c == 'e'
+		|| c == 'c' || c == 'p');
 }

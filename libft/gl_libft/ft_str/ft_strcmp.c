@@ -6,11 +6,11 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 17:34:52 by glions            #+#    #+#             */
-/*   Updated: 2024/04/11 10:49:27 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/24 20:30:58 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "gl_libft.h"
 
 int	ft_strcmp(char *s1, char *s2)
 {

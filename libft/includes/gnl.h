@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 18:23:45 by glions            #+#    #+#             */
-/*   Updated: 2024/04/11 11:22:42 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/24 20:36:02 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <sys/types.h>
 # include <sys/uio.h>
 # include <unistd.h>
-# include "libft.h"
+# include "gl_libft.h"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 500

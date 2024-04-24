@@ -6,11 +6,11 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 10:55:21 by glions            #+#    #+#             */
-/*   Updated: 2024/04/11 09:39:08 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/24 20:32:24 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "gl_libft.h"
 
 static unsigned int	ft_itoa_hex_len(unsigned int n)
 {

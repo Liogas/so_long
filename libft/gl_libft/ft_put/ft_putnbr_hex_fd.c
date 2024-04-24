@@ -6,11 +6,11 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 10:50:45 by glions            #+#    #+#             */
-/*   Updated: 2024/04/11 09:42:26 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/24 20:32:51 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "gl_libft.h"
 
 void	ft_putnbr_hex_fd(long long n, int fd, int upper)
 {

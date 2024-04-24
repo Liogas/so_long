@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 14:29:11 by glions            #+#    #+#             */
-/*   Updated: 2024/04/13 17:52:40 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/24 20:27:29 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "gl_list.h"
-# include "libft.h"
+# include "gl_libft.h"
 # include "gnl.h"
 
 typedef struct s_file_gl

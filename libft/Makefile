@@ -13,6 +13,8 @@ SRCS_LIBFT		=	$(PATH_LIBFT)ft_char/ft_isalpha.c $(PATH_LIBFT)ft_char/ft_isdigit.
 					$(PATH_LIBFT)ft_str/ft_strjoin.c $(PATH_LIBFT)ft_str/ft_constr.c $(PATH_LIBFT)ft_str/ft_strtrim.c $(PATH_LIBFT)ft_str/ft_split.c \
 					$(PATH_LIBFT)ft_str/ft_strmapi.c $(PATH_LIBFT)ft_str/ft_striteri.c \
 \
+					$(PATH_LIBFT)ft_free/ft_free_tab2D_int_gl.c \
+\
 					$(PATH_LIBFT)ft_conv/ft_atoi.c $(PATH_LIBFT)ft_conv/ft_itoa.c $(PATH_LIBFT)ft_conv/ft_utoa.c $(PATH_LIBFT)ft_conv/ft_ptoa.c \
 					$(PATH_LIBFT)ft_conv/ft_itoa_hex.c \
 \
@@ -31,7 +33,7 @@ SRCS_LIST		=	$(PATH_LIST)add_list_gl.c $(PATH_LIST)free_list_gl.c $(PATH_LIST)ne
 OBJS_LIST		=	$(SRCS_LIST:.c=.o)
 
 PATH_FILE		=	./gl_file/
-SRCS_FILE		=	$(PATH_FILE)models/gl_file.c
+SRCS_FILE		=	$(PATH_FILE)gl_file.c
 OBJS_FILE		=	$(SRCS_FILE:.c=.o)
 
 PATH_UTILS		=	./gl_utils/
@@ -74,7 +76,7 @@ MINILIBX		=	./gl_mlx/minilibx/libmlx_Linux.a
 all : $(LIB)
 
 %.o: %.c
-	@$(CC) $(CFLAGS) -o $@ -c $^ $(INCLUDES)
+	@$(CC) $(CFLAGS) -g3 -o $@ -c $^ $(INCLUDES)
 
 $(LIB): $(MINILIBX) $(OBJS_LIB)
 	@echo "MINILIBX ✅"

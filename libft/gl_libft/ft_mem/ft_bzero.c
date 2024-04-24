@@ -6,11 +6,11 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 09:02:46 by glions            #+#    #+#             */
-/*   Updated: 2024/04/11 09:40:59 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/24 20:29:28 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "gl_libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
