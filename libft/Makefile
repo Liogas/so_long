@@ -18,8 +18,10 @@ SRCS_LIBFT		=	$(PATH_LIBFT)ft_char/ft_isalpha.c $(PATH_LIBFT)ft_char/ft_isdigit.
 					$(PATH_LIBFT)ft_conv/ft_atoi.c $(PATH_LIBFT)ft_conv/ft_itoa.c $(PATH_LIBFT)ft_conv/ft_utoa.c $(PATH_LIBFT)ft_conv/ft_ptoa.c \
 					$(PATH_LIBFT)ft_conv/ft_itoa_hex.c \
 \
+					$(PATH_LIBFT)ft_dup/ft_dup_tab2D_int_gl.c \
+\
 					$(PATH_LIBFT)ft_put/ft_putchar_fd.c $(PATH_LIBFT)ft_put/ft_putstr_fd.c $(PATH_LIBFT)ft_put/ft_putendl_fd.c $(PATH_LIBFT)ft_put/ft_putnbr_fd.c \
-					$(PATH_LIBFT)ft_put/ft_putnbr_u_fd.c $(PATH_LIBFT)ft_put/ft_putnbr_hex_fd.c $(PATH_LIBFT)ft_put/ft_putptr_hex_fd.c \
+					$(PATH_LIBFT)ft_put/ft_putnbr_u_fd.c $(PATH_LIBFT)ft_put/ft_putnbr_hex_fd.c $(PATH_LIBFT)ft_put/ft_putptr_hex_fd.c $(PATH_LIBFT)ft_put/ft_put_tab2D_int_gl.c\
 \
 					$(PATH_LIBFT)ft_alloc/ft_calloc.c
 OBJS_LIBFT		=	$(SRCS_LIBFT:.c=.o)

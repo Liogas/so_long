@@ -1,14 +1,10 @@
-# so_long
+# SO_LONG
 
-# DERNIER PUSH (24/04/2024:23:11)
-- Parsing presque fonctionnel : manque la vérification de map, faire avec flood_fill
+# DERNIER PUSH (25/04/2024:14:46)
+- Parsing terminé : 0 leak, 0 erreur norminette 
 
-# PRIORITE
-- Refaire un parsing (EN COURS)
+# EN COURS
 - Affichage basique de la map
-
-# A REVOIR
-
 
 # A FAIRE
 - Mise en place de la caméra
@@ -17,5 +13,8 @@
 - Bordure de map retravaillée
 - Améliorer les graphismes
 
+# A REVOIR
+
 # A REFLECHIR
+- Affichage des cases non explorées en noir et blanc
 - Mettre en place un système de lumière

@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 11:52:49 by glions            #+#    #+#             */
-/*   Updated: 2024/04/24 22:37:55 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/25 14:42:08 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,15 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putnbr_u_fd(unsigned int n, int fd);
 void	ft_putnbr_hex_fd(long long n, int fd, int upper);
 void	ft_putptr_hex_fd(unsigned long long n, int fd);
+void	ft_put_tab2d_int_gl(int **tab, int height, int width);
 
 // ALLOC MEMORY
 void	*ft_calloc(size_t elementCount, size_t elementSize);
 
 // FREE
-void	ft_free_tab2D_int_gl(int **tab, int height);
+void	ft_free_tab2d_int_gl(int **tab, int height);
+
+// DUP
+int		**ft_dup_tab2d_int_gl(int **target, int height, int width);
 
 #endif
