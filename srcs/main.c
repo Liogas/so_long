@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 19:41:10 by glions            #+#    #+#             */
-/*   Updated: 2024/04/24 23:00:55 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/25 19:40:05 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,16 @@
 
 static int	init_game(t_map *map)
 {
+	t_game	*game;
+
 	if (!map)
 		return (0);
-	free_map(map);
+	game = new_game(map);
+	if (!game)
+		return (ft_putstr_fd("ERROR : create game\n", 2), free_map(map), 0);
+	if (!graph_setup(game))
+		return (free_game(game), 0);
+	free_game(game);
 	return (1);
 }
 
@@ -40,6 +47,6 @@ int	main(int ac, char **av)
 	if (!map)
 		return (ft_putstr_fd("ERROR : new_map\n", 2), free_file_gl(file), 1);
 	if (!init_game(parsing(map, file)))
-		return (ft_putstr_fd("ERROR : init_game\n", 2), 1);
+		return (1);
 	return (0);
 }

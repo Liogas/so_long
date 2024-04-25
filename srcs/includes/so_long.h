@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 19:43:25 by glions            #+#    #+#             */
-/*   Updated: 2024/04/25 14:05:15 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/25 19:32:26 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,53 @@
 
 typedef struct s_map
 {
-	int	height;
-	int	width;
-	int	**tab;
-	int	player_y;
-	int	player_x;
-}		t_map;
+	int			height;
+	int			width;
+	int			**tab;
+	int			player_y;
+	int			player_x;
+}				t_map;
+
+typedef struct s_player
+{
+	int			pos_x;
+	int			pos_y;
+	int			direction;
+}				t_player;
+
+typedef struct s_game
+{
+	t_mlx_gl	*graph_data;
+	t_map		*map;
+	t_player	*player;
+}				t_game;
 
 // MAP
-t_map	*new_map(int height, int width);
-void	free_map(t_map *map);
+t_map			*new_map(int height, int width);
+void			free_map(t_map *map);
+
+// PLAYER
+t_player		*new_player(int y, int x);
+void			free_player(t_player *player);
+
+// GAME
+t_game			*new_game(t_map *map);
+void			free_game(t_game *game);
 
 // PARSING
-t_map	*parsing(t_map *map, t_file_gl *file);
-int		c_is_valid(char c);
-int		can_go(int c);
-void	fill(int **tab, int size[2], int cur[2]);
-void	set_start_player(t_map *map);
+t_map			*parsing(t_map *map, t_file_gl *file);
+int				c_is_valid(char c);
+int				can_go(int c);
+void			fill(int **tab, int size[2], int cur[2]);
+void			set_start_player(t_map *map);
+
+// GRAPH
+int	graph_setup(t_game *game);
+int	graph_addborder(t_game *game);
+int	graph_addplayer(t_game *game);
+int	graph_addwall(t_game *game);
+int	graph_addexit(t_game *game);
+int	graph_addcollect(t_game *game);
+
 
 #endif

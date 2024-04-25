@@ -6,16 +6,16 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 00:40:22 by glions            #+#    #+#             */
-/*   Updated: 2024/04/24 20:27:46 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/25 18:24:50 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GL_MLX_H
 # define GL_MLX_H
 
+# include "gl_libft.h"
 # include "gl_list.h"
 # include "gnl.h"
-# include "gl_libft.h"
 # include "mlx.h"
 # include "mlx_int.h"
 # include <X11/keysym.h>
@@ -79,6 +79,7 @@ typedef struct s_mlx_gl
 	t_list_gl		*objects;
 }					t_mlx_gl;
 
+// MLX
 t_mlx_gl			*mlx_init_gl(void);
 t_mlx_gl			*mlx_init_with_window_gl(int width_window,
 						int height_window, char *title_window);
@@ -98,21 +99,27 @@ void				mlx_animation_put_to_img_gl(t_mlx_gl *mlx,
 						t_mlx_object_gl *object, t_mlx_animation_gl *animation,
 						t_mlx_image_gl *dst);
 
+// WINDOW
 t_mlx_window_gl		*mlx_create_win_gl(t_mlx_gl *mlx, int width, int height,
 						char *title);
 void				mlx_free_win_gl(t_mlx_gl *mlx, t_mlx_window_gl *window);
 void				mlx_print_window_data_gl(t_mlx_window_gl *window);
 
+// ANIMATION
 t_mlx_animation_gl	*mlx_create_animation_gl(t_mlx_image_gl *img, char *name,
 						int time_delay);
 void				mlx_free_animation_gl(t_mlx_animation_gl *animation);
 void				mlx_print_animation_data_gl(t_mlx_animation_gl *animation);
 
+// OBJECT
 t_mlx_object_gl		*mlx_create_object_gl(char *name, int pos_x, int pos_y,
 						void *data);
 void				mlx_free_object_gl(t_mlx_object_gl *object);
 void				mlx_print_object_data_gl(t_mlx_object_gl *object);
+int					mlx_object_set_curr_animation_gl(t_mlx_gl *mlx,
+						char *object_name, char *animation_name);
 
+// IMAGE
 t_mlx_image_gl		*mlx_load_img_gl(t_mlx_gl *mlx, char *path, char *name);
 t_mlx_image_gl		*mlx_create_img_gl(t_mlx_gl *mlx, int width, int height,
 						char *name);
@@ -126,6 +133,7 @@ unsigned int		mlx_image_get_pixel_gl(t_mlx_image_gl *img, int x, int y);
 void				mlx_image_put_image_gl(t_mlx_image_gl *dst,
 						t_mlx_image_gl *src, int x, int y);
 
+// SPRITE
 t_mlx_sprite_gl		*mlx_create_sprite_gl(char *name, int pos_y, int nb_frame,
 						int size_frame[2]);
 void				mlx_free_sprite_gl(t_mlx_sprite_gl *sprite);

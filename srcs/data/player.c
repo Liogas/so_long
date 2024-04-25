@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mlx_create_animation_gl.c                          :+:      :+:    :+:   */
+/*   player.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/20 21:42:32 by glions            #+#    #+#             */
-/*   Updated: 2024/04/25 19:40:13 by glions           ###   ########.fr       */
+/*   Created: 2024/04/25 15:06:14 by glions            #+#    #+#             */
+/*   Updated: 2024/04/25 15:08:23 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "gl_mlx.h"
+#include "so_long.h"
 
-t_mlx_animation_gl	*mlx_create_animation_gl(t_mlx_image_gl *img,
-		char *sprite_name, int time_delay)
+void	free_player(t_player *player)
 {
-	t_mlx_animation_gl	*new;
+	free(player);
+}
 
-	if (!img || !sprite_name || time_delay <= 0 || !sprite_name[0])
-		return (NULL);
-	new = malloc(sizeof(t_mlx_animation_gl));
+t_player	*new_player(int y, int x)
+{
+	t_player	*new;
+
+	new = malloc(sizeof(t_player));
 	if (!new)
 		return (NULL);
-	new->img = img;
-	new->sprite_name = sprite_name;
-	new->time_d = time_delay;
-	new->time = 0;
-	new->cur_f = 0;
+	new->direction = 0;
+	new->pos_x = x;
+	new->pos_y = y;
 	return (new);
 }

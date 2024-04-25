@@ -5,7 +5,9 @@ CFLAGS			=	-Wall -Werror -Wextra -g3
 LIB				=	./lib/libft.a
 
 PATH_GAME		=	srcs/
-SRCS_GAME		=	$(PATH_GAME)main.c $(PATH_GAME)map.c $(PATH_GAME)parsing/parsing.c $(PATH_GAME)parsing/parsing_utils.c
+SRCS_GAME		=	$(PATH_GAME)main.c  $(PATH_GAME)parsing/parsing.c $(PATH_GAME)parsing/parsing_utils.c \
+					$(PATH_GAME)data/map.c $(PATH_GAME)data/game.c $(PATH_GAME)data/player.c \
+					$(PATH_GAME)graph/graph_addimages.c $(PATH_GAME)graph/graph_setup.c
 OBJS_GAME		=	$(SRCS_GAME:.c=.o)
 NAME			=	so_long
 MINILIBX		=	./libft/gl_mlx/minilibx/libmlx_Linux.a

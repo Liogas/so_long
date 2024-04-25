@@ -6,13 +6,13 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 20:44:02 by glions            #+#    #+#             */
-/*   Updated: 2024/04/25 14:42:28 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/25 15:38:21 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	verif_map_valid(t_map *map)
+static int	verif_map_valid(t_map *map)
 {
 	int	**cpy_tab;
 	int	i;
@@ -21,7 +21,7 @@ int	verif_map_valid(t_map *map)
 	cpy_tab = ft_dup_tab2d_int_gl(map->tab, map->height, map->width);
 	if (!cpy_tab)
 		return (0);
-	fill(cpy_tab, (int [2]){map->height, map->width}, (int [2]){map->player_y,
+	fill(cpy_tab, (int[2]){map->height, map->width}, (int[2]){map->player_y,
 		map->player_x});
 	i = -1;
 	while (++i < map->height)
@@ -67,7 +67,8 @@ static int	conv_value(char c, int nb, int i, int size[2])
 {
 	if (!c_is_valid(c))
 		return (-1);
-	if (nb == 0 && nb == size[0] - 1 && i == 0 && i == size[1] && c == '1')
+	if (((nb == 0 || nb == size[0] - 1) || (i == 0 || i == size[1] - 1))
+		&& c == '1')
 		return (1);
 	else if (c == '1')
 		return (2);
@@ -102,7 +103,7 @@ static int	verif_line(int ***tab, char *line, t_file_gl *file)
 		if (((nb == 0 || nb == file->nblines - 1) && line[i] != '1') || ((i == 0
 					|| i == line_size - 1) && line[i] != '1'))
 			return (ft_putstr_fd("ERROR : border invalid\n", 2), 0);
-		(*tab)[nb][i] = conv_value(line[i], nb, i, (int [2]){file->nblines,
+		(*tab)[nb][i] = conv_value(line[i], nb, i, (int[2]){file->nblines,
 				width});
 		if ((*tab)[nb][i] == -1)
 			return (ft_putstr_fd("ERROR : invalid value on map\n", 2), 0);

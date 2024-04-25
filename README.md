@@ -1,7 +1,7 @@
 # SO_LONG
 
-# DERNIER PUSH (25/04/2024:14:46)
-- Parsing terminé : 0 leak, 0 erreur norminette 
+# DERNIER PUSH (25/04/2024:19:41)
+- Chargement des images + animations + object ... pour l'interface graphique OK (norminette ok)
 
 # EN COURS
 - Affichage basique de la map

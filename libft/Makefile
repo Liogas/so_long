@@ -58,7 +58,7 @@ SRCS_MLX		=	$(PATH_MLX)image/mlx_create_img_gl.c $(PATH_MLX)image/mlx_free_img_g
 					$(PATH_MLX)animation/mlx_print_animation_data_gl.c $(PATH_MLX)animation/utils/mlx_animation_put_to_img_gl.c\
 \
 					$(PATH_MLX)object/mlx_create_object_gl.c $(PATH_MLX)object/mlx_free_object_gl.c \
-					$(PATH_MLX)object/mlx_print_object_data_gl.c \
+					$(PATH_MLX)object/mlx_print_object_data_gl.c $(PATH_MLX)object/utils/mlx_object_set_curr_animation_gl.c \
 \
 					$(PATH_MLX)mlx_init_gl.c $(PATH_MLX)mlx_free_gl.c \
 					$(PATH_MLX)mlx_print_data_gl.c $(PATH_MLX)utils/mlx_addobject_gl.c \
