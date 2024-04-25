@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:44:27 by glions            #+#    #+#             */
-/*   Updated: 2024/04/25 19:40:11 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/25 22:21:34 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,21 +89,8 @@ int	graph_addwall(t_game *game)
 
 int	graph_addexit(t_game *game)
 {
-	if (!mlx_addobject_gl(game->graph_data, mlx_create_object_gl("fire", 0, 0,
-				NULL)))
-		return (0);
 	if (!mlx_addimage_gl(game->graph_data, mlx_load_img_gl(game->graph_data,
-				"./srcs/sprites/fire.xpm", "fire_animation")))
-		return (0);
-	if (!mlx_addsprite_gl(game->graph_data, "fire_animation",
-			mlx_create_sprite_gl("fire_default", 0, 7, (int[2]){128, 128})))
-		return (0);
-	if (!mlx_addanimation_gl(game->graph_data, "fire", "fire_default",
-			mlx_create_animation_gl(mlx_get_image_by_name_gl(game->graph_data,
-					"fire_animation"), "fire_default", 500)))
-		return (0);
-	if (!mlx_object_set_curr_animation_gl(game->graph_data, "fire",
-			"fire_default"))
+				"./srcs/sprites/tower.xpm", "tower")))
 		return (0);
 	return (1);
 }

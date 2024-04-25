@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 00:40:22 by glions            #+#    #+#             */
-/*   Updated: 2024/04/25 18:24:50 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/25 21:43:25 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,6 +132,8 @@ void				mlx_image_put_pixel_gl(t_mlx_image_gl *img, int x, int y,
 unsigned int		mlx_image_get_pixel_gl(t_mlx_image_gl *img, int x, int y);
 void				mlx_image_put_image_gl(t_mlx_image_gl *dst,
 						t_mlx_image_gl *src, int x, int y);
+void				mlx_image_put_area_image_gl(t_mlx_image_gl *dst,
+						t_mlx_image_gl *src, int pos[2], int size[2]);
 
 // SPRITE
 t_mlx_sprite_gl		*mlx_create_sprite_gl(char *name, int pos_y, int nb_frame,

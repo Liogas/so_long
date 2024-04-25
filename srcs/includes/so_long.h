@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 19:43:25 by glions            #+#    #+#             */
-/*   Updated: 2024/04/25 19:32:26 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/25 22:37:27 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ typedef struct s_player
 {
 	int			pos_x;
 	int			pos_y;
+	int			pos_pixel_x;
+	int			pos_pixel_y;
 	int			direction;
 }				t_player;
 
@@ -58,12 +60,19 @@ void			fill(int **tab, int size[2], int cur[2]);
 void			set_start_player(t_map *map);
 
 // GRAPH
-int	graph_setup(t_game *game);
-int	graph_addborder(t_game *game);
-int	graph_addplayer(t_game *game);
-int	graph_addwall(t_game *game);
-int	graph_addexit(t_game *game);
-int	graph_addcollect(t_game *game);
-
+int				graph_setup(t_game *game);
+int				graph_addborder(t_game *game);
+int				graph_addplayer(t_game *game);
+int				graph_addwall(t_game *game);
+int				graph_addexit(t_game *game);
+int				graph_addcollect(t_game *game);
+int				graph_drawplayer(int y, int x, t_game *game,
+					t_mlx_image_gl *dst);
+int				graph_drawwall(int y, int x, t_game *game, t_mlx_image_gl *dst);
+int				graph_drawexit(int y, int x, t_game *game, t_mlx_image_gl *dst);
+int				graph_drawcollect(int y, int x, t_game *game,
+					t_mlx_image_gl *dst);
+int				graph_drawfloor(int y, int x, t_game *game,
+					t_mlx_image_gl *dst);
 
 #endif

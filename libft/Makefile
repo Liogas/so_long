@@ -47,6 +47,7 @@ SRCS_MLX		=	$(PATH_MLX)image/mlx_create_img_gl.c $(PATH_MLX)image/mlx_free_img_g
 					$(PATH_MLX)image/mlx_load_img_gl.c  $(PATH_MLX)image/mlx_print_image_data_gl.c \
 					$(PATH_MLX)image/utils/mlx_image_put_image_gl.c  $(PATH_MLX)image/utils/mlx_image_get_sprite_by_name_gl.c \
 					$(PATH_MLX)image/utils/mlx_image_put_pixel_gl.c  $(PATH_MLX)image/utils/mlx_image_get_pixel_gl.c \
+					$(PATH_MLX)image/utils/mlx_image_put_area_image_gl.c \
 \
 					$(PATH_MLX)sprite/mlx_create_sprite_gl.c $(PATH_MLX)sprite/mlx_free_sprite_gl.c \
 					$(PATH_MLX)sprite/mlx_print_sprite_data_gl.c \
