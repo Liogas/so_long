@@ -1,44 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   player.c                                           :+:      :+:    :+:   */
+/*   camera.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 15:06:14 by glions            #+#    #+#             */
-/*   Updated: 2024/04/26 23:24:34 by glions           ###   ########.fr       */
+/*   Created: 2024/04/26 15:54:49 by glions            #+#    #+#             */
+/*   Updated: 2024/04/26 22:06:02 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	update_pos_player(t_player *player, int pos_y, int pos_x, t_mlx_object_gl *obj)
+void	free_camera(t_camera *camera)
 {
-	player->pos_pixel_y = pos_y;
-	player->pos_pixel_x = pos_x;
-	if (obj)
-	{
-		obj->pos_x = pos_x;
-		obj->pos_y = pos_y;
-	}
+	if (!camera)
+		return ;
+	free(camera);
 }
 
-void	free_player(t_player *player)
+static void	set_value(int tab[2])
 {
-	free(player);
+	tab[0] = -1;
+	tab[1] = -1;
 }
 
-t_player	*new_player(int y, int x)
+t_camera	*new_camera()
 {
-	t_player	*new;
+	t_camera	*new;
 
-	new = malloc(sizeof(t_player));
+	new = malloc(sizeof(t_camera));
 	if (!new)
 		return (NULL);
-	new->direction = 0;
-	new->pos_x = x;
-	new->pos_y = y;
-	new->pos_pixel_x = (x - 1) * 192;
-	new->pos_pixel_y = (y - 1) * 192;
+	set_value(new->end);
+	set_value(new->start);
+	set_value(new->percent_x);
+	set_value(new->percent_y);
+	set_value(new->pos_x);
+	set_value(new->pos_y);
+	set_value(new->pxl_center);
 	return (new);
 }

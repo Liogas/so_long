@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 00:40:22 by glions            #+#    #+#             */
-/*   Updated: 2024/04/26 12:39:30 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/26 22:56:21 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ typedef struct s_mlx_camera_gl
 	int				height;
 	t_mlx_image_gl	*bckgd;
 	t_mlx_object_gl	*target;
+	void			*more_data;
 }					t_mlx_camera_gl;
 
 typedef struct s_mlx_window_gl
@@ -104,6 +105,8 @@ int					mlx_addsprite_gl(t_mlx_gl *mlx, char *img_name,
 int					mlx_addanimation_gl(t_mlx_gl *mlx, char *object_name,
 						char *name, t_mlx_animation_gl *animation);
 int					mlx_addcamera_gl(t_mlx_gl *mlx, t_mlx_camera_gl *camera);
+t_mlx_camera_gl		*mlx_get_camera_by_name_gl(t_mlx_gl *mlx,
+						char *camera_name);
 t_mlx_image_gl		*mlx_get_image_by_name_gl(t_mlx_gl *mlx, char *name);
 t_mlx_object_gl		*mlx_get_object_by_name_gl(t_mlx_gl *mlx, char *name);
 t_mlx_animation_gl	*mlx_get_animation_by_name_gl(t_mlx_gl *mlx,
@@ -147,7 +150,8 @@ void				mlx_image_put_image_gl(t_mlx_image_gl *dst,
 						t_mlx_image_gl *src, int x, int y);
 void				mlx_image_put_area_image_gl(t_mlx_image_gl *dst,
 						t_mlx_image_gl *src, int pos[2], int size[2]);
-
+void				mlx_image_put_area_image2_gl(t_mlx_image_gl *dst,
+						t_mlx_image_gl *src, int pos[2], int size[2]);
 // SPRITE
 t_mlx_sprite_gl		*mlx_create_sprite_gl(char *name, int pos_y, int nb_frame,
 						int size_frame[2]);
@@ -158,5 +162,9 @@ void				mlx_print_sprite_data_gl(t_mlx_sprite_gl *sprite);
 void				mlx_camera_free_gl(t_mlx_gl *mlx, t_mlx_camera_gl *camera);
 t_mlx_camera_gl		*mlx_camera_create_gl(char *name, t_mlx_object_gl *target,
 						int pos[2], int size[2]);
+void				mlx_camera_update_pos_gl(t_mlx_camera_gl *camera,
+						int new_pos[2]);
+void				mlx_camera_set_moredata_gl(void *more_data,
+						t_mlx_camera_gl *camera);
 
 #endif

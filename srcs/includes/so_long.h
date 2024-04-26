@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 19:43:25 by glions            #+#    #+#             */
-/*   Updated: 2024/04/25 22:37:27 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/26 21:53:58 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,17 @@
 # define SO_LONG_H
 
 # include "libft.h"
+
+typedef struct s_camera
+{
+	int pxl_center[2];
+	int	pos_x[2];
+	int	pos_y[2];
+	int	start[2];
+	int	end[2];
+	int	percent_x[2];
+	int	percent_y[2];
+}				t_camera;
 
 typedef struct s_map
 {
@@ -38,7 +49,12 @@ typedef struct s_game
 	t_mlx_gl	*graph_data;
 	t_map		*map;
 	t_player	*player;
+	t_camera	*camera;
 }				t_game;
+
+// CAMERA
+t_camera		*new_camera(void);
+void			free_camera(t_camera *camera);
 
 // MAP
 t_map			*new_map(int height, int width);
@@ -47,6 +63,8 @@ void			free_map(t_map *map);
 // PLAYER
 t_player		*new_player(int y, int x);
 void			free_player(t_player *player);
+void			update_pos_player(t_player *player, int pos_y, int pos_x,
+					t_mlx_object_gl *obj);
 
 // GAME
 t_game			*new_game(t_map *map);
@@ -66,7 +84,7 @@ int				graph_addplayer(t_game *game);
 int				graph_addwall(t_game *game);
 int				graph_addexit(t_game *game);
 int				graph_addcollect(t_game *game);
-int				graph_drawplayer(int y, int x, t_game *game,
+int				graph_drawplayer(int pos[2], t_game *game,
 					t_mlx_image_gl *dst);
 int				graph_drawwall(int y, int x, t_game *game, t_mlx_image_gl *dst);
 int				graph_drawexit(int y, int x, t_game *game, t_mlx_image_gl *dst);
@@ -74,5 +92,7 @@ int				graph_drawcollect(int y, int x, t_game *game,
 					t_mlx_image_gl *dst);
 int				graph_drawfloor(int y, int x, t_game *game,
 					t_mlx_image_gl *dst);
+void			graph_setup_cam(t_game *game, t_mlx_camera_gl *camera);
+int				graph_draw_map(t_game *game, t_mlx_camera_gl *camera);
 
 #endif

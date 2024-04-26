@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:46:20 by glions            #+#    #+#             */
-/*   Updated: 2024/04/26 12:47:43 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/26 15:18:17 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_mlx_camera_gl	*mlx_camera_create_gl(char *name, t_mlx_object_gl *target,
 	new->target = target;
 	new->width = size[1];
 	new->height = size[0];
+	new->more_data = NULL;
 	if (target)
 	{
 		new->pos_y = target->pos_y;

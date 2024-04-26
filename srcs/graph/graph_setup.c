@@ -6,18 +6,11 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:22:16 by glions            #+#    #+#             */
-/*   Updated: 2024/04/26 12:59:47 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/26 23:37:42 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-int	key_listener(int key, t_game *game)
-{
-	if (key == XK_Escape)
-		mlx_loop_end(game->graph_data->ptr);
-	return (0);
-}
 
 static int	graph_load_images(t_game *game)
 {
@@ -40,64 +33,51 @@ static int	graph_load_images(t_game *game)
 	return (1);
 }
 
-int	graph_draw_map(t_game *game, t_mlx_image_gl *dst)
-{
-	int	i;
-	int	j;
-	int	e;
-
-	i = -1;
-	e = 1;
-	while (++i < game->map->height)
-	{
-		j = -1;
-		while (++j < game->map->width)
-		{
-			if (game->map->tab[i][j] == 2)
-				e = graph_drawwall(i - 1, j - 1, game, dst);
-			else if (game->map->tab[i][j] == 3)
-				e = graph_drawplayer(i - 1, j - 1, game, dst);
-			else if (game->map->tab[i][j] == 4)
-				e = graph_drawexit(i - 1, j - 1, game, dst);
-			else if (game->map->tab[i][j] == 5)
-				e = graph_drawcollect(i - 1, j - 1, game, dst);
-			else if (game->map->tab[i][j] == 0)
-				e = graph_drawfloor(i - 1, j - 1, game, dst);
-			if (!e)
-				return (0);
-		}
-	}
-	return (1);
-}
-
-int	graph_setup(t_game *game)
+int	graph_gen_camera(t_game *game)
 {
 	t_mlx_camera_gl	*camera;
+	t_camera		*more_data;
 
-	game->graph_data->window = mlx_create_win_gl(game->graph_data, 1280, 720,
-			"window");
-	if (!game->graph_data->window)
-		return (ft_putstr_fd("ERROR : create window\n", 2), 0);
-	if (!graph_load_images(game))
-		return (ft_putstr_fd("ERROR : load images\n", 2), 0);
 	camera = mlx_camera_create_gl("camera_0",
 			mlx_get_object_by_name_gl(game->graph_data, "player"), (int[2]){0,
 			0}, (int[2]){game->graph_data->window->height,
 			game->graph_data->window->width});
 	if (!camera)
 		return (0);
-	if (!mlx_addcamera_gl(game->graph_data, camera))
-		return (ft_putstr_fd("ERROR : create camera\n", 2), 0);
-	camera->bckgd = mlx_create_img_gl(game->graph_data,
-			game->graph_data->window->width, game->graph_data->window->width,
-			"camera_01_b");
+	more_data = new_camera();
+	if (!more_data)
+		return (0);
+	camera->more_data = more_data;
+	game->camera = more_data;
+	camera->bckgd = mlx_create_img_gl(game->graph_data, camera->width,
+			camera->height, "camera_01_b");
 	if (!camera->bckgd)
 		return (0);
-	if (!graph_draw_map(game, camera->bckgd))
-		return (ft_putstr_fd("ERROR : draw map\n", 2), 0);
-	mlx_put_image_to_window(game->graph_data->ptr,
-		game->graph_data->window->ptr, camera->bckgd->ptr, 0, 0);
-	mlx_key_hook(game->graph_data->window->ptr, &key_listener, game);
-	mlx_loop(game->graph_data->ptr);
+	if (!mlx_addcamera_gl(game->graph_data, camera))
+		return (0);
+	return (1);
+}
+
+int	graph_setup(t_game *game)
+{
+	t_mlx_object_gl	*object;
+	
+	game->graph_data->window = mlx_create_win_gl(game->graph_data, 1280, 720,
+			"window");
+	mlx_free_img_gl(game->graph_data, game->graph_data->window->bckgd);
+	game->graph_data->window->bckgd = mlx_create_img_gl(game->graph_data,
+			game->map->width * 192, game->map->height * 192, "all_map");
+	if (!game->graph_data->window->bckgd)
+		return (ft_putstr_fd("ERROR : create img win\n", 2), 0);
+	if (!game->graph_data->window)
+		return (ft_putstr_fd("ERROR : create window\n", 2), 0);
+	if (!graph_load_images(game))
+		return (ft_putstr_fd("ERROR : load images\n", 2), 0);
+	if (!graph_gen_camera(game))
+		return (ft_putstr_fd("ERROR : gen camera\n", 2), 0);
+	object = mlx_get_object_by_name_gl(game->graph_data, "player");
+	if (!object)
+		return (0);
+	update_pos_player(game->player, game->player->pos_pixel_y, game->player->pos_pixel_x, object);
 	return (1);
 }

@@ -59,6 +59,7 @@ SRCS_MLX		=	$(PATH_MLX)image/mlx_create_img_gl.c $(PATH_MLX)image/mlx_free_img_g
 					$(PATH_MLX)animation/mlx_print_animation_data_gl.c $(PATH_MLX)animation/utils/mlx_animation_put_to_img_gl.c\
 \
 					$(PATH_MLX)camera/mlx_camera_create_gl.c $(PATH_MLX)camera/mlx_camera_free_gl.c \
+					$(PATH_MLX)camera/utils/mlx_camera_update_gl.c $(PATH_MLX)camera/utils/mlx_camera_set_moredata_gl.c \
 \
 					$(PATH_MLX)object/mlx_create_object_gl.c $(PATH_MLX)object/mlx_free_object_gl.c \
 					$(PATH_MLX)object/mlx_print_object_data_gl.c $(PATH_MLX)object/utils/mlx_object_set_curr_animation_gl.c \
@@ -68,7 +69,7 @@ SRCS_MLX		=	$(PATH_MLX)image/mlx_create_img_gl.c $(PATH_MLX)image/mlx_free_img_g
 					$(PATH_MLX)utils/mlx_addimage_gl.c $(PATH_MLX)utils/mlx_addsprite_gl.c \
 					$(PATH_MLX)utils/mlx_addanimation_gl.c $(PATH_MLX)utils/mlx_get_image_by_name_gl.c \
 					$(PATH_MLX)utils/mlx_get_object_by_name_gl.c $(PATH_MLX)utils/mlx_get_animation_by_name_gl.c \
-					$(PATH_MLX)utils/mlx_addcamera_gl.c
+					$(PATH_MLX)utils/mlx_addcamera_gl.c $(PATH_MLX)utils/mlx_get_camera_by_name_gl.c
 OBJS_MLX		=	$(SRCS_MLX:.c=.o)
 
 OBJS_LIB		=	$(OBJS_LIBFT) $(OBJS_GNL) $(OBJS_LIST) $(OBJS_FILE) $(OBJS_UTILS) $(OBJS_MLX)

@@ -6,11 +6,30 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 21:37:26 by glions            #+#    #+#             */
-/*   Updated: 2024/04/25 21:43:03 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/26 23:17:19 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "gl_mlx.h"
+
+void	mlx_image_put_area_image2_gl(t_mlx_image_gl *dst, t_mlx_image_gl *src,
+		int pos[2], int size[2])
+{
+	int i;
+	int j;
+
+	printf("Data recu dans mlx_put_area2\n");
+	printf("pos{%d,%d}\n", pos[0], pos[1]);
+	printf("size{%d,%d}\n", size[0], size[1]);
+	i = 0;
+	while (++i < src->width && i < size[1])
+	{
+		j = 0;
+		while (++j < src->height && j < size[0])
+			mlx_image_put_pixel_gl(dst,  i,  j,
+				mlx_image_get_pixel_gl(src, pos[1] + i, pos[0] + j));
+	}
+}
 
 void	mlx_image_put_area_image_gl(t_mlx_image_gl *dst, t_mlx_image_gl *src,
 		int pos[2], int size[2])
@@ -23,7 +42,7 @@ void	mlx_image_put_area_image_gl(t_mlx_image_gl *dst, t_mlx_image_gl *src,
 	{
 		j = 0;
 		while (++j < src->height && j < size[1])
-			mlx_image_put_pixel_gl(dst, pos[1] + i, pos[0] + j,
-				mlx_image_get_pixel_gl(src, i, j));
+			mlx_image_put_pixel_gl(dst, pos[1] + i,  pos[0] + j,
+				mlx_image_get_pixel_gl(src,  i, j));
 	}
 }

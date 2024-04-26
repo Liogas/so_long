@@ -6,13 +6,13 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 21:25:31 by glions            #+#    #+#             */
-/*   Updated: 2024/04/25 22:38:15 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/26 23:33:25 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	graph_drawplayer(int y, int x, t_game *game, t_mlx_image_gl *dst)
+int	graph_drawplayer(int pos[2], t_game *game, t_mlx_image_gl *dst)
 {
 	t_mlx_image_gl		*image;
 	t_mlx_object_gl		*object;
@@ -21,8 +21,8 @@ int	graph_drawplayer(int y, int x, t_game *game, t_mlx_image_gl *dst)
 	image = mlx_get_image_by_name_gl(game->graph_data, "floor");
 	if (!image)
 		return (0);
-	mlx_image_put_area_image_gl(dst, image, (int[2]){y * 192, x * 192},
-		(int[2]){192, 192});
+	mlx_image_put_area_image_gl(dst, image, (int[2]){pos[0] * 192, pos[1]
+		* 192}, (int[2]){192, 192});
 	object = mlx_get_object_by_name_gl(game->graph_data, "player");
 	if (!object)
 		return (0);

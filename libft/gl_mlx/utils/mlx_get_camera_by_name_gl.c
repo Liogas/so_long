@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mlx_get_animation_by_name_gl.c                     :+:      :+:    :+:   */
+/*   mlx_get_camera_by_name_gl.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 14:24:13 by glions            #+#    #+#             */
-/*   Updated: 2024/04/26 14:15:41 by glions           ###   ########.fr       */
+/*   Created: 2024/04/26 20:05:46 by glions            #+#    #+#             */
+/*   Updated: 2024/04/26 20:07:25 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "gl_mlx.h"
 
-t_mlx_animation_gl	*mlx_get_animation_by_name_gl(t_mlx_gl *mlx,
-		char *object_name, char *animation_name)
+t_mlx_camera_gl	*mlx_get_camera_by_name_gl(t_mlx_gl *mlx, char *camera_name)
 {
-	t_list_gl		*list;
-	t_mlx_object_gl	*object;
+	t_list_gl	*list;
 
-	object = mlx_get_object_by_name_gl(mlx, object_name);
-	if (!object)
+	if (!mlx || !camera_name)
 		return (NULL);
-	list = object->animations;
+	list = mlx->cameras;
 	while (list)
 	{
-		if (!ft_strcmp(((t_mlx_animation_gl *)list->content)->sprite_name,
-				animation_name))
+		if (!ft_strcmp(((t_mlx_camera_gl *)list->content)->name, camera_name))
 			return (list->content);
 		list = list->next;
 	}

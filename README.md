@@ -1,14 +1,13 @@
 # SO_LONG
 
-# DERNIER PUSH (26/04/2024:13:03)
-- On peut créer et détruire une caméra, test pour dessiner dedans et l'afficher OK
+# DERNIER PUSH (26/04/2024:23:48)
+- Mise en place simple d'une caméra (version pas propre du tout)
+Centrer le point de vue sur sa target
+Afficher uniquement ce que l'on doit voir
 
 # EN COURS
 - Mise en place de la caméra :
-Centrer le point de vue sur sa target
-Afficher uniquement ce que l'on doit voir
-Mouvement de la caméra avec les flèches du clavier
-Revenir à la position initiale avec la touche espace
+Revoir probleme d'affichage (affichage pas propre pour le bas et la droite)
 
 # A FAIRE
 - Mise en place des animations
