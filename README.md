@@ -1,10 +1,14 @@
 # SO_LONG
 
-# DERNIER PUSH (25/04/2024:22:43)
-- Affichage de la map OK, version pas propre mais fonctionnel. A retravailler pendant les étapes suivantes
+# DERNIER PUSH (26/04/2024:13:03)
+- On peut créer et détruire une caméra, test pour dessiner dedans et l'afficher OK
 
 # EN COURS
-- Mise en place de la caméra
+- Mise en place de la caméra :
+Centrer le point de vue sur sa target
+Afficher uniquement ce que l'on doit voir
+Mouvement de la caméra avec les flèches du clavier
+Revenir à la position initiale avec la touche espace
 
 # A FAIRE
 - Mise en place des animations

@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:44:27 by glions            #+#    #+#             */
-/*   Updated: 2024/04/25 22:21:34 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/26 12:59:41 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	graph_addborder(t_game *game)
 int	graph_addplayer(t_game *game)
 {
 	if (!mlx_addobject_gl(game->graph_data, mlx_create_object_gl("player", 0, 0,
-				NULL)) || !mlx_addimage_gl(game->graph_data,
+				game->player)) || !mlx_addimage_gl(game->graph_data,
 			mlx_load_img_gl(game->graph_data, "./srcs/sprites/player.xpm",
 				"player")))
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 12:32:01 by glions            #+#    #+#             */
-/*   Updated: 2024/04/21 16:27:11 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/26 12:41:06 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ t_mlx_gl	*mlx_init_with_window_gl(int width_window, int height_window,
 		return (free(new), NULL);
 	new->images = NULL;
 	new->objects = NULL;
+	new->cameras = NULL;
 	new->window = mlx_create_win_gl(new, width_window, height_window,
 			title_window);
 	if (!new->window)
@@ -43,6 +44,7 @@ t_mlx_gl	*mlx_init_gl(void)
 	if (!new->ptr)
 		return (free(new), NULL);
 	new->images = NULL;
+	new->cameras = NULL;
 	new->objects = NULL;
 	new->window = NULL;
 	return (new);

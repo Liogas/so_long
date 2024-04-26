@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 12:29:40 by glions            #+#    #+#             */
-/*   Updated: 2024/04/21 16:34:12 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/26 12:54:54 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,19 @@ static void	mlx_free_objects_gl(t_mlx_gl *mlx)
 	}
 }
 
+static void	mlx_free_cameras_gl(t_mlx_gl *mlx)
+{
+	t_list_gl	*tmp;
+
+	while (mlx->cameras)
+	{
+		tmp = mlx->cameras->next;
+		mlx_camera_free_gl(mlx, (t_mlx_camera_gl *)mlx->cameras->content);
+		free(mlx->cameras);
+		mlx->cameras = tmp;
+	}
+}
+
 void	mlx_free_gl(t_mlx_gl *mlx)
 {
 	if (mlx)
@@ -48,6 +61,8 @@ void	mlx_free_gl(t_mlx_gl *mlx)
 			mlx_free_objects_gl(mlx);
 		if (mlx->window)
 			mlx_free_win_gl(mlx, mlx->window);
+		if (mlx->cameras)
+			mlx_free_cameras_gl(mlx);
 		if (mlx->ptr)
 			(mlx_destroy_display(mlx->ptr), free(mlx->ptr));
 		free(mlx);

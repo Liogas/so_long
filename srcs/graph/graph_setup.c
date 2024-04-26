@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:22:16 by glions            #+#    #+#             */
-/*   Updated: 2024/04/25 22:40:08 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/26 12:59:47 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int	graph_draw_map(t_game *game, t_mlx_image_gl *dst)
 	int	i;
 	int	j;
 	int	e;
+
 	i = -1;
 	e = 1;
 	while (++i < game->map->height)
@@ -71,18 +72,31 @@ int	graph_draw_map(t_game *game, t_mlx_image_gl *dst)
 
 int	graph_setup(t_game *game)
 {
+	t_mlx_camera_gl	*camera;
+
 	game->graph_data->window = mlx_create_win_gl(game->graph_data, 1280, 720,
 			"window");
 	if (!game->graph_data->window)
 		return (ft_putstr_fd("ERROR : create window\n", 2), 0);
 	if (!graph_load_images(game))
 		return (ft_putstr_fd("ERROR : load images\n", 2), 0);
-	if (!graph_draw_map(game, game->graph_data->window->bckgd))
+	camera = mlx_camera_create_gl("camera_0",
+			mlx_get_object_by_name_gl(game->graph_data, "player"), (int[2]){0,
+			0}, (int[2]){game->graph_data->window->height,
+			game->graph_data->window->width});
+	if (!camera)
+		return (0);
+	if (!mlx_addcamera_gl(game->graph_data, camera))
+		return (ft_putstr_fd("ERROR : create camera\n", 2), 0);
+	camera->bckgd = mlx_create_img_gl(game->graph_data,
+			game->graph_data->window->width, game->graph_data->window->width,
+			"camera_01_b");
+	if (!camera->bckgd)
+		return (0);
+	if (!graph_draw_map(game, camera->bckgd))
 		return (ft_putstr_fd("ERROR : draw map\n", 2), 0);
 	mlx_put_image_to_window(game->graph_data->ptr,
-		game->graph_data->window->ptr, game->graph_data->window->bckgd->ptr, 0,
-		0);
-	// mlx_print_data_gl(game->graph_data);
+		game->graph_data->window->ptr, camera->bckgd->ptr, 0, 0);
 	mlx_key_hook(game->graph_data->window->ptr, &key_listener, game);
 	mlx_loop(game->graph_data->ptr);
 	return (1);
