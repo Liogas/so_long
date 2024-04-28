@@ -1,11 +1,11 @@
 # SO_LONG
 
-# DERNIER PUSH (28/04/2024:16:49)
-- fix pour la caméra
-- Mise en place des animations (il en manque)
+# DERNIER PUSH (28/04/2024:18:02)
+- Gameplay ok (fichier dans srcs/ tous à la norme)
+Problemes : map2.ber ne s'ouvre plus
 
 # EN COURS
-- Gameplay
+Corriger les petits bugs présents
 
 # A FAIRE
 - Bordure de map retravaillée
@@ -23,3 +23,4 @@
 # FINI
 - Parsing
 - Chargement des images / objects / animations / sprites
+- Gameplay

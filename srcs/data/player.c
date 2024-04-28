@@ -6,13 +6,14 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 15:06:14 by glions            #+#    #+#             */
-/*   Updated: 2024/04/28 16:40:34 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/28 17:55:11 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	update_pos_player(t_player *player, int pos_y, int pos_x, t_mlx_object_gl *obj)
+void	update_pos_player(t_player *player, int pos_y, int pos_x,
+		t_mlx_object_gl *obj)
 {
 	if (obj)
 	{

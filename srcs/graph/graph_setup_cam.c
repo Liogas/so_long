@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:04:28 by glions            #+#    #+#             */
-/*   Updated: 2024/04/28 16:43:32 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/28 17:57:39 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void	set_y(t_game *game, t_mlx_camera_gl *camera)
 {
-	t_camera		*data;
-	
+	t_camera	*data;
+
 	data = camera->more_data;
 	if (game->player->pos_y < 3)
 	{
@@ -27,20 +27,20 @@ static void	set_y(t_game *game, t_mlx_camera_gl *camera)
 	{
 		data->start[0] = game->map->height - 6;
 		data->end[0] = game->map->height - 1;
-		data->mode_y = (192 * 5) - camera->height;   
+		data->mode_y = (192 * 5) - camera->height;
 	}
 	else
 	{
 		data->start[0] = game->player->pos_y - 2;
 		data->end[0] = game->player->pos_y + 2;
-		data->mode_y = ((192 * 2) + (192/2)) - (camera->height / 2);
+		data->mode_y = ((192 * 2) + (192 / 2)) - (camera->height / 2);
 	}
 }
 
 static void	set_x(t_game *game, t_mlx_camera_gl *camera)
 {
-	t_camera		*data;
-	
+	t_camera	*data;
+
 	data = camera->more_data;
 	if (game->player->pos_x < 4)
 	{

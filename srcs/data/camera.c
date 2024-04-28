@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:54:49 by glions            #+#    #+#             */
-/*   Updated: 2024/04/27 20:26:53 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/28 17:55:01 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	set_value(int tab[2])
 	tab[1] = -1;
 }
 
-t_camera	*new_camera()
+t_camera	*new_camera(void)
 {
 	t_camera	*new;
 

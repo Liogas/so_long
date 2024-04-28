@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 19:41:10 by glions            #+#    #+#             */
-/*   Updated: 2024/04/27 18:47:43 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/28 17:50:46 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,27 @@ static int	refresh_animations(t_game *game)
 
 int	key_listener(int key, t_game *game)
 {
+	int	e;
+
 	if (key == XK_Escape)
 		mlx_loop_end(game->graph_data->ptr);
+	else if (!game->win)
+	{
+		e = 0;
+		if (key == XK_z || key == XK_Z || key == XK_W || key == XK_w)
+			e = game_moove_up(game);
+		else if (key == XK_q || key == XK_Q || key == XK_a || key == XK_A)
+			e = game_moove_left(game);
+		else if (key == XK_d || key == XK_D)
+			e = game_moove_right(game);
+		else if (key == XK_s || key == XK_S)
+			e = game_moove_down(game);
+		if (!e)
+			mlx_loop_end(game->graph_data->ptr);
+		if (game->win)
+			(ft_putstr_fd("Well done ! number of tantatives : ", 1),
+				ft_putnbr_fd(game->turns, 1), ft_putchar_fd('\n', 1));
+	}
 	return (0);
 }
 
@@ -44,7 +63,8 @@ static int	init_game(t_map *map, t_game **game)
 
 static int	start_game(t_game *game)
 {
-	if (!graph_draw_map(game, mlx_get_camera_by_name_gl(game->graph_data, "camera_0")))
+	if (!graph_draw_map(game, mlx_get_camera_by_name_gl(game->graph_data,
+				"camera_0")))
 		return (ft_putstr_fd("ERROR: draw_map\n", 2), 0);
 	mlx_key_hook(game->graph_data->window->ptr, &key_listener, game);
 	mlx_loop_hook(game->graph_data->ptr, &refresh_animations, game);

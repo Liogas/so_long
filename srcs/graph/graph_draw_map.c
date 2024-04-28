@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 18:25:40 by glions            #+#    #+#             */
-/*   Updated: 2024/04/28 16:25:14 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/28 17:57:22 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@ static int	graph_draw_texture(int pos[2], int value, t_game *game,
 	if (value == 2)
 		return (graph_drawwall(pos[0], pos[1], game, img));
 	else if (value == 3)
-		return (graph_drawplayer((int[2]){pos[0], pos[1]}, game, img));
+		return (graph_drawplayer((int [2]){pos[0], pos[1]}, game, img));
 	else if (value == 4)
 		return (graph_drawexit(pos[0], pos[1], game, img));
 	else if (value == 5)
 		return (graph_drawcollect(pos[0], pos[1], game, img));
 	else if (value == 0)
 		return (graph_drawfloor(pos[0], pos[1], game, img));
+	else if (value == 6)
+		return (graph_draw_exit_player(pos[0], pos[1], game, img));
 	return (0);
 }
 
@@ -44,7 +46,7 @@ static int	graph_draw_first_step(t_game *game, t_mlx_image_gl **dst,
 		l = data->start[1];
 		while (++j < 7)
 		{
-			if (!graph_draw_texture((int[2]){i, j}, game->map->tab[k][l], game,
+			if (!graph_draw_texture((int [2]){i, j}, game->map->tab[k][l], game,
 					*dst))
 				return (0);
 			l++;
@@ -60,7 +62,8 @@ static void	graph_draw_for_camera(t_game *game, t_mlx_camera_gl *camera)
 
 	data = camera->more_data;
 	mlx_image_put_area_image2_gl(camera->bckgd, game->graph_data->window->bckgd,
-		(int[2]){data->mode_y, data->mode_x}, (int[2]){camera->height, camera->width});
+		(int [2]){data->mode_y, data->mode_x}, (int [2]){camera->height,
+		camera->width});
 }
 
 int	graph_draw_map(t_game *game, t_mlx_camera_gl *camera)

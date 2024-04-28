@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 19:43:25 by glions            #+#    #+#             */
-/*   Updated: 2024/04/27 20:27:05 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/28 17:26:38 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,9 @@ typedef struct s_game
 	t_map		*map;
 	t_player	*player;
 	t_camera	*camera;
+	int			win;
+	int			turns;
+	int			sheeps;
 }				t_game;
 
 // CAMERA
@@ -84,6 +87,8 @@ int				graph_addcollect(t_game *game);
 int				graph_drawplayer(int pos[2], t_game *game, t_mlx_image_gl *dst);
 int				graph_drawwall(int y, int x, t_game *game, t_mlx_image_gl *dst);
 int				graph_drawexit(int y, int x, t_game *game, t_mlx_image_gl *dst);
+int				graph_draw_exit_player(int y, int x, t_game *game,
+					t_mlx_image_gl *dst);
 int				graph_drawcollect(int y, int x, t_game *game,
 					t_mlx_image_gl *dst);
 int				graph_drawfloor(int y, int x, t_game *game,
@@ -91,5 +96,11 @@ int				graph_drawfloor(int y, int x, t_game *game,
 int				graph_setup_cam(t_game *game, t_mlx_camera_gl *camera);
 int				graph_draw_map(t_game *game, t_mlx_camera_gl *camera);
 int				graph_update_animations(t_game *game);
+
+// GAME
+int				game_moove_right(t_game *game);
+int				game_moove_left(t_game *game);
+int				game_moove_down(t_game *game);
+int				game_moove_up(t_game *game);
 
 #endif

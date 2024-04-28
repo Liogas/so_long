@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:22:16 by glions            #+#    #+#             */
-/*   Updated: 2024/04/28 16:36:46 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/28 17:56:39 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	graph_load_images(t_game *game)
 				"./srcs/sprites/grass.xpm", "floor")))
 		return (0);
 	if (!mlx_addsprite_gl(game->graph_data, "floor",
-			mlx_create_sprite_gl("floor", 0, 1, (int[2]){192, 192})))
+			mlx_create_sprite_gl("floor", 0, 1, (int [2]){192, 192})))
 		return (0);
 	return (1);
 }
@@ -37,8 +37,8 @@ int	graph_gen_camera(t_game *game)
 	t_camera		*more_data;
 
 	camera = mlx_camera_create_gl("camera_0",
-			mlx_get_object_by_name_gl(game->graph_data, "player"), (int[2]){0,
-			0}, (int[2]){game->graph_data->window->height,
+			mlx_get_object_by_name_gl(game->graph_data, "player"), (int [2]){0,
+			0}, (int [2]){game->graph_data->window->height,
 			game->graph_data->window->width});
 	if (!camera)
 		return (0);
@@ -62,7 +62,8 @@ int	graph_setup(t_game *game)
 			"window");
 	mlx_free_img_gl(game->graph_data, game->graph_data->window->bckgd);
 	game->graph_data->window->bckgd = mlx_create_img_gl(game->graph_data,
-			(game->map->width - 2) * 192, (game->map->height - 2) * 192, "all_map");
+			(game->map->width - 2) * 192, (game->map->height - 2) * 192,
+			"all_map");
 	if (!game->graph_data->window->bckgd)
 		return (ft_putstr_fd("ERROR : create img win\n", 2), 0);
 	if (!game->graph_data->window)

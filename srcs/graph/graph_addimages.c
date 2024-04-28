@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:44:27 by glions            #+#    #+#             */
-/*   Updated: 2024/04/28 16:35:10 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/28 17:58:49 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	graph_addborder(t_game *game)
 				"./srcs/sprites/water/water_animation.xpm", "water_animation")))
 		return (0);
 	if (!mlx_addsprite_gl(game->graph_data, "water_animation",
-			mlx_create_sprite_gl("water_default", 0, 8, (int[2]){192, 192})))
+			mlx_create_sprite_gl("water_default", 0, 8, (int [2]){192, 192})))
 		return (0);
 	if (!mlx_addanimation_gl(game->graph_data, "water_animation",
 			"water_animation",
@@ -45,11 +45,11 @@ int	graph_addplayer(t_game *game)
 				"player")))
 		return (0);
 	if (!mlx_addsprite_gl(game->graph_data, "player",
-			mlx_create_sprite_gl("player_default", 0, 6, (int[2]){192, 192}))
+			mlx_create_sprite_gl("player_default", 0, 6, (int [2]){192, 192}))
 		|| !mlx_addsprite_gl(game->graph_data, "player",
-			mlx_create_sprite_gl("player_moove", 1, 6, (int[2]){192, 192}))
+			mlx_create_sprite_gl("player_moove", 1, 6, (int [2]){192, 192}))
 		|| !mlx_addsprite_gl(game->graph_data, "player",
-			mlx_create_sprite_gl("player_attack", 2, 6, (int[2]){192, 192})))
+			mlx_create_sprite_gl("player_attack", 2, 6, (int [2]){192, 192})))
 		return (0);
 	if (!mlx_addanimation_gl(game->graph_data, "player", "player_default",
 			mlx_create_animation_gl(mlx_get_image_by_name_gl(game->graph_data,
@@ -75,7 +75,7 @@ int	graph_addwall(t_game *game)
 				"./srcs/sprites/tree.xpm", "tree_animation")))
 		return (0);
 	if (!mlx_addsprite_gl(game->graph_data, "tree_animation",
-			mlx_create_sprite_gl("tree_default", 0, 4, (int[2]){192, 192})))
+			mlx_create_sprite_gl("tree_default", 0, 4, (int [2]){192, 192})))
 		return (0);
 	if (!mlx_addanimation_gl(game->graph_data, "tree", "tree_default",
 			mlx_create_animation_gl(mlx_get_image_by_name_gl(game->graph_data,
@@ -104,10 +104,10 @@ int	graph_addcollect(t_game *game)
 				"./srcs/sprites/sheep/sheep.xpm", "sheep_animation")))
 		return (0);
 	if (!mlx_addsprite_gl(game->graph_data, "sheep_animation",
-			mlx_create_sprite_gl("sheep_default", 0, 8, (int[2]){128, 128})))
+			mlx_create_sprite_gl("sheep_default", 0, 8, (int [2]){128, 128})))
 		return (0);
 	if (!mlx_addsprite_gl(game->graph_data, "sheep_animation",
-			mlx_create_sprite_gl("sheep_jump", 1, 6, (int[2]){128, 128})))
+			mlx_create_sprite_gl("sheep_jump", 1, 6, (int [2]){128, 128})))
 		return (0);
 	if (!mlx_addanimation_gl(game->graph_data, "sheep", "sheep_default",
 			mlx_create_animation_gl(mlx_get_image_by_name_gl(game->graph_data,

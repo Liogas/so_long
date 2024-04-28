@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 20:44:02 by glions            #+#    #+#             */
-/*   Updated: 2024/04/25 15:38:21 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/28 17:59:55 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	verif_map_valid(t_map *map)
 	cpy_tab = ft_dup_tab2d_int_gl(map->tab, map->height, map->width);
 	if (!cpy_tab)
 		return (0);
-	fill(cpy_tab, (int[2]){map->height, map->width}, (int[2]){map->player_y,
+	fill(cpy_tab, (int [2]){map->height, map->width}, (int [2]){map->player_y,
 		map->player_x});
 	i = -1;
 	while (++i < map->height)
@@ -103,7 +103,7 @@ static int	verif_line(int ***tab, char *line, t_file_gl *file)
 		if (((nb == 0 || nb == file->nblines - 1) && line[i] != '1') || ((i == 0
 					|| i == line_size - 1) && line[i] != '1'))
 			return (ft_putstr_fd("ERROR : border invalid\n", 2), 0);
-		(*tab)[nb][i] = conv_value(line[i], nb, i, (int[2]){file->nblines,
+		(*tab)[nb][i] = conv_value(line[i], nb, i, (int [2]){file->nblines,
 				width});
 		if ((*tab)[nb][i] == -1)
 			return (ft_putstr_fd("ERROR : invalid value on map\n", 2), 0);
