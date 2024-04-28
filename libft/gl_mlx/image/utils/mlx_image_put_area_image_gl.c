@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 21:37:26 by glions            #+#    #+#             */
-/*   Updated: 2024/04/26 23:17:19 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/27 20:14:03 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@ void	mlx_image_put_area_image2_gl(t_mlx_image_gl *dst, t_mlx_image_gl *src,
 	int i;
 	int j;
 
-	printf("Data recu dans mlx_put_area2\n");
-	printf("pos{%d,%d}\n", pos[0], pos[1]);
-	printf("size{%d,%d}\n", size[0], size[1]);
 	i = 0;
 	while (++i < src->width && i < size[1])
 	{

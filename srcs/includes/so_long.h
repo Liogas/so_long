@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 19:43:25 by glions            #+#    #+#             */
-/*   Updated: 2024/04/26 21:53:58 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/27 20:27:05 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,10 @@
 
 typedef struct s_camera
 {
-	int pxl_center[2];
-	int	pos_x[2];
-	int	pos_y[2];
-	int	start[2];
-	int	end[2];
-	int	percent_x[2];
-	int	percent_y[2];
+	int			start[2];
+	int			end[2];
+	int			mode_y;
+	int			mode_x;
 }				t_camera;
 
 typedef struct s_map
@@ -84,15 +81,15 @@ int				graph_addplayer(t_game *game);
 int				graph_addwall(t_game *game);
 int				graph_addexit(t_game *game);
 int				graph_addcollect(t_game *game);
-int				graph_drawplayer(int pos[2], t_game *game,
-					t_mlx_image_gl *dst);
+int				graph_drawplayer(int pos[2], t_game *game, t_mlx_image_gl *dst);
 int				graph_drawwall(int y, int x, t_game *game, t_mlx_image_gl *dst);
 int				graph_drawexit(int y, int x, t_game *game, t_mlx_image_gl *dst);
 int				graph_drawcollect(int y, int x, t_game *game,
 					t_mlx_image_gl *dst);
 int				graph_drawfloor(int y, int x, t_game *game,
 					t_mlx_image_gl *dst);
-void			graph_setup_cam(t_game *game, t_mlx_camera_gl *camera);
+int				graph_setup_cam(t_game *game, t_mlx_camera_gl *camera);
 int				graph_draw_map(t_game *game, t_mlx_camera_gl *camera);
+int				graph_update_animations(t_game *game);
 
 #endif

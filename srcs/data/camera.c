@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:54:49 by glions            #+#    #+#             */
-/*   Updated: 2024/04/26 22:06:02 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/27 20:26:53 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,7 @@ t_camera	*new_camera()
 		return (NULL);
 	set_value(new->end);
 	set_value(new->start);
-	set_value(new->percent_x);
-	set_value(new->percent_y);
-	set_value(new->pos_x);
-	set_value(new->pos_y);
-	set_value(new->pxl_center);
+	new->mode_y = 0;
+	new->mode_x = 0;
 	return (new);
 }

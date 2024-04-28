@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:22:16 by glions            #+#    #+#             */
-/*   Updated: 2024/04/26 23:37:42 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/28 16:36:46 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 static int	graph_load_images(t_game *game)
 {
-	if (!graph_addborder(game))
-		return (0);
 	if (!graph_addplayer(game))
 		return (0);
 	if (!graph_addwall(game))
@@ -60,13 +58,11 @@ int	graph_gen_camera(t_game *game)
 
 int	graph_setup(t_game *game)
 {
-	t_mlx_object_gl	*object;
-	
 	game->graph_data->window = mlx_create_win_gl(game->graph_data, 1280, 720,
 			"window");
 	mlx_free_img_gl(game->graph_data, game->graph_data->window->bckgd);
 	game->graph_data->window->bckgd = mlx_create_img_gl(game->graph_data,
-			game->map->width * 192, game->map->height * 192, "all_map");
+			(game->map->width - 2) * 192, (game->map->height - 2) * 192, "all_map");
 	if (!game->graph_data->window->bckgd)
 		return (ft_putstr_fd("ERROR : create img win\n", 2), 0);
 	if (!game->graph_data->window)
@@ -75,9 +71,5 @@ int	graph_setup(t_game *game)
 		return (ft_putstr_fd("ERROR : load images\n", 2), 0);
 	if (!graph_gen_camera(game))
 		return (ft_putstr_fd("ERROR : gen camera\n", 2), 0);
-	object = mlx_get_object_by_name_gl(game->graph_data, "player");
-	if (!object)
-		return (0);
-	update_pos_player(game->player, game->player->pos_pixel_y, game->player->pos_pixel_x, object);
 	return (1);
 }

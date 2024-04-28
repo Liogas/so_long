@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 21:25:31 by glions            #+#    #+#             */
-/*   Updated: 2024/04/26 23:33:25 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/28 16:42:38 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	graph_drawplayer(int pos[2], t_game *game, t_mlx_image_gl *dst)
 	object = mlx_get_object_by_name_gl(game->graph_data, "player");
 	if (!object)
 		return (0);
+	update_pos_player(game->player, pos[0] * 192, pos[1] * 192, object);
 	animation = mlx_get_animation_by_name_gl(game->graph_data, object->name,
 			object->curr_anim);
 	if (!animation)

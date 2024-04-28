@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:44:27 by glions            #+#    #+#             */
-/*   Updated: 2024/04/26 12:59:41 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/28 16:35:10 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	graph_addborder(t_game *game)
 	if (!mlx_addanimation_gl(game->graph_data, "water_animation",
 			"water_animation",
 			mlx_create_animation_gl(mlx_get_image_by_name_gl(game->graph_data,
-					"water_animation"), "water_animation", 500)))
+					"water_animation"), "water_animation", 3)))
 		return (0);
 	if (!mlx_addimage_gl(game->graph_data, mlx_load_img_gl(game->graph_data,
 				"./srcs/sprites/water/water.xpm", "water")))
@@ -53,13 +53,13 @@ int	graph_addplayer(t_game *game)
 		return (0);
 	if (!mlx_addanimation_gl(game->graph_data, "player", "player_default",
 			mlx_create_animation_gl(mlx_get_image_by_name_gl(game->graph_data,
-					"player"), "player_default", 500))
+					"player"), "player_default", 4))
 		|| !mlx_addanimation_gl(game->graph_data, "player", "player_moove",
 			mlx_create_animation_gl(mlx_get_image_by_name_gl(game->graph_data,
-					"player"), "player_moove", 500))
+					"player"), "player_moove", 3))
 		|| !mlx_addanimation_gl(game->graph_data, "player", "player_attack",
 			mlx_create_animation_gl(mlx_get_image_by_name_gl(game->graph_data,
-					"player"), "player_attack", 500))
+					"player"), "player_attack", 3))
 		|| !mlx_object_set_curr_animation_gl(game->graph_data, "player",
 			"player_default"))
 		return (0);
@@ -79,7 +79,7 @@ int	graph_addwall(t_game *game)
 		return (0);
 	if (!mlx_addanimation_gl(game->graph_data, "tree", "tree_default",
 			mlx_create_animation_gl(mlx_get_image_by_name_gl(game->graph_data,
-					"tree_animation"), "tree_default", 500)))
+					"tree_animation"), "tree_default", 8)))
 		return (0);
 	if (!mlx_object_set_curr_animation_gl(game->graph_data, "tree",
 			"tree_default"))
@@ -111,11 +111,11 @@ int	graph_addcollect(t_game *game)
 		return (0);
 	if (!mlx_addanimation_gl(game->graph_data, "sheep", "sheep_default",
 			mlx_create_animation_gl(mlx_get_image_by_name_gl(game->graph_data,
-					"sheep_animation"), "sheep_default", 500)))
+					"sheep_animation"), "sheep_default", 5)))
 		return (0);
 	if (!mlx_addanimation_gl(game->graph_data, "sheep", "sheep_jump",
 			mlx_create_animation_gl(mlx_get_image_by_name_gl(game->graph_data,
-					"sheep_animation"), "sheep_jump", 500)))
+					"sheep_animation"), "sheep_jump", 3)))
 		return (0);
 	if (!mlx_object_set_curr_animation_gl(game->graph_data, "sheep",
 			"sheep_default"))

@@ -1,22 +1,20 @@
 # SO_LONG
 
-# DERNIER PUSH (26/04/2024:23:48)
-- Mise en place simple d'une caméra (version pas propre du tout)
-Centrer le point de vue sur sa target
-Afficher uniquement ce que l'on doit voir
+# DERNIER PUSH (28/04/2024:16:49)
+- fix pour la caméra
+- Mise en place des animations (il en manque)
 
 # EN COURS
-- Mise en place de la caméra :
-Revoir probleme d'affichage (affichage pas propre pour le bas et la droite)
+- Gameplay
 
 # A FAIRE
-- Mise en place des animations
-- Gameplay
 - Bordure de map retravaillée
 - Améliorer les graphismes
 
 # A REVOIR
 - Affichage de la carte (se fera au fur et à mesure des autres étapes)
+- Mise en place de la caméra -> Affichage à régler (peut se faire pendant le déplacement du player)
+- Ajouter les animations manquantes (déplacement, animation d'attaque)
 
 # A REFLECHIR
 - Affichage des cases non explorées en noir et blanc
