@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:22:16 by glions            #+#    #+#             */
-/*   Updated: 2024/04/28 17:56:39 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/30 12:23:12 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static int	graph_load_images(t_game *game)
 	if (!graph_addexit(game))
 		return (0);
 	if (!graph_addcollect(game))
+		return (0);
+	if (!graph_addbackgmap(game))
 		return (0);
 	if (!mlx_addimage_gl(game->graph_data, mlx_load_img_gl(game->graph_data,
 				"./srcs/sprites/grass.xpm", "floor")))

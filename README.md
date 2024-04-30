@@ -1,13 +1,13 @@
 # SO_LONG
 
-# DERNIER PUSH (28/04/2024:18:02)
-- Gameplay ok (fichier dans srcs/ tous à la norme)
-Problemes : map2.ber ne s'ouvre plus
+# DERNIER PUSH (30/04/2024:15:42)
+- Ajout d'une map pour se situer (revoir l'affichage)
 
 # EN COURS
 Corriger les petits bugs présents
 
 # A FAIRE
+- UI
 - Bordure de map retravaillée
 - Améliorer les graphismes
 

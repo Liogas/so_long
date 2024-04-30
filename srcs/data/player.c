@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 15:06:14 by glions            #+#    #+#             */
-/*   Updated: 2024/04/28 17:55:11 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/29 16:30:46 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ t_player	*new_player(int y, int x)
 	new->direction = 0;
 	new->pos_x = x;
 	new->pos_y = y;
+	new->target_x = -1;
+	new->target_y = -1;
 	new->pos_pixel_x = (x - 1) * 192;
 	new->pos_pixel_y = (y - 1) * 192;
 	return (new);

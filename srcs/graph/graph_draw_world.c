@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   graph_draw_map.c                                   :+:      :+:    :+:   */
+/*   graph_draw_world.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 18:25:40 by glions            #+#    #+#             */
-/*   Updated: 2024/04/28 17:57:22 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/30 12:21:13 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static void	graph_draw_for_camera(t_game *game, t_mlx_camera_gl *camera)
 		camera->width});
 }
 
-int	graph_draw_map(t_game *game, t_mlx_camera_gl *camera)
+int	graph_draw_world(t_game *game, t_mlx_camera_gl *camera)
 {
 	if (!camera)
 		return (0);
@@ -76,6 +76,9 @@ int	graph_draw_map(t_game *game, t_mlx_camera_gl *camera)
 			camera->more_data))
 		return (ft_putstr_fd("ERROR : draw all map\n", 2), 0);
 	graph_draw_for_camera(game, camera);
+	if (game->minimap == 1)
+		if (!graph_show_map(game))
+			return (0);
 	mlx_put_image_to_window(game->graph_data->ptr,
 		game->graph_data->window->ptr, camera->bckgd->ptr, 0, 0);
 	return (1);

@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 15:08:56 by glions            #+#    #+#             */
-/*   Updated: 2024/04/28 17:41:46 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/30 12:35:10 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ t_game	*new_game(t_map *map)
 	new->win = 0;
 	new->turns = 0;
 	new->sheeps = nb_sheep(map->tab, map->height, map->width);
+	new->minimap = -1;
 	return (new);
 }

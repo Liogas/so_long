@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 19:41:10 by glions            #+#    #+#             */
-/*   Updated: 2024/04/28 17:50:46 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/30 15:29:28 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	refresh_animations(t_game *game)
 		ft_putstr_fd("ERROR : update_animation\n", 2);
 		mlx_loop_end(game->graph_data->ptr);
 	}
-	graph_draw_map(game, game->graph_data->cameras->content);
+	graph_draw_world(game, game->graph_data->cameras->content);
 	return (0);
 }
 
@@ -29,9 +29,11 @@ int	key_listener(int key, t_game *game)
 
 	if (key == XK_Escape)
 		mlx_loop_end(game->graph_data->ptr);
+	else if (key == XK_m || key == XK_M)
+		game->minimap *= -1;
 	else if (!game->win)
 	{
-		e = 0;
+		e = 1;
 		if (key == XK_z || key == XK_Z || key == XK_W || key == XK_w)
 			e = game_moove_up(game);
 		else if (key == XK_q || key == XK_Q || key == XK_a || key == XK_A)
@@ -63,7 +65,7 @@ static int	init_game(t_map *map, t_game **game)
 
 static int	start_game(t_game *game)
 {
-	if (!graph_draw_map(game, mlx_get_camera_by_name_gl(game->graph_data,
+	if (!graph_draw_world(game, mlx_get_camera_by_name_gl(game->graph_data,
 				"camera_0")))
 		return (ft_putstr_fd("ERROR: draw_map\n", 2), 0);
 	mlx_key_hook(game->graph_data->window->ptr, &key_listener, game);

@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 15:53:52 by glions            #+#    #+#             */
-/*   Updated: 2024/04/28 16:31:57 by glions           ###   ########.fr       */
+/*   Updated: 2024/04/29 16:33:41 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,26 @@ static int	graph_update_animation(t_mlx_animation_gl *anim)
 	return (1);
 }
 
+static void	graph_update_animation_player(t_game *game)
+{
+	if (game->player->pos_pixel_x < game->player->target_x && game->player->target_x != -1 && game->player->target_y == -1)
+		update_pos_player(game->player, game->player->pos_pixel_y,
+			game->player->pos_pixel_x + 5,
+			mlx_get_object_by_name_gl(game->graph_data, "player"));
+	else if (game->player->pos_pixel_x > game->player->target_x && game->player->target_x != -1 && game->player->target_y == -1)
+		update_pos_player(game->player, game->player->pos_pixel_y,
+			game->player->pos_pixel_x - 5,
+			mlx_get_object_by_name_gl(game->graph_data, "player"));
+	else if (game->player->pos_pixel_y < game->player->target_y && game->player->target_y != -1 && game->player->target_x == -1)
+		update_pos_player(game->player, game->player->pos_pixel_y + 5,
+			game->player->pos_pixel_x,
+			mlx_get_object_by_name_gl(game->graph_data, "player"));
+	else if (game->player->pos_pixel_y > game->player->target_y && game->player->target_y != -1 && game->player->target_x == -1)
+		update_pos_player(game->player, game->player->pos_pixel_y - 5,
+			game->player->pos_pixel_x,
+			mlx_get_object_by_name_gl(game->graph_data, "player"));
+}
+
 int	graph_update_animations(t_game *game)
 {
 	t_list_gl			*objects;
@@ -46,6 +66,8 @@ int	graph_update_animations(t_game *game)
 					o->curr_anim);
 			if (!a)
 				return (0);
+			if (!ft_strcmp(a->sprite_name, "player_moove"))
+				graph_update_animation_player(game);
 			if (!graph_update_animation(a))
 				return (0);
 			objects = objects->next;
