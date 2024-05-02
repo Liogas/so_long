@@ -1,13 +1,13 @@
 # SO_LONG
 
-# DERNIER PUSH (30/04/2024:15:42)
-- Ajout d'une map pour se situer (revoir l'affichage)
+# DERNIER PUSH (30/04/2024:16:22)
+- Avancement dans la minimap mais c pas propre du tout, revoir tous le fichier (recommencer)
 
 # EN COURS
-Corriger les petits bugs présents
+- Corriger les petits bugs présents
+- UI
 
 # A FAIRE
-- UI
 - Bordure de map retravaillée
 - Améliorer les graphismes
 
