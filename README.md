@@ -1,7 +1,7 @@
 # SO_LONG
 
-# DERNIER PUSH (30/04/2024:16:22)
-- Avancement dans la minimap mais c pas propre du tout, revoir tous le fichier (recommencer)
+# DERNIER PUSH (30/04/2024:17:00)
+- Continuer de voir l'affichage de la mini map
 
 # EN COURS
 - Corriger les petits bugs présents
