@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 11:52:49 by glions            #+#    #+#             */
-/*   Updated: 2024/04/25 14:42:08 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/04 15:56:29 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,6 @@ void	ft_free_tab2d_int_gl(int **tab, int height);
 
 // DUP
 int		**ft_dup_tab2d_int_gl(int **target, int height, int width);
+char	*ft_strdup(char *src);
 
 #endif

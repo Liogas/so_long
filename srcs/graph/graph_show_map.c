@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 10:52:33 by glions            #+#    #+#             */
-/*   Updated: 2024/05/03 15:49:32 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/04 16:55:10 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,49 +91,15 @@ int	graph_draw_map_bkcgd(t_game *game, int h, int w)
 		{
 			size_img[0] = 128;
 			size_img[1] = 128;
-			if ((i + 1) * 128 > h - 8)
+			if ((i + 1) * 128 > h)
 				size_img[0] = 128 - (((i + 1) * 128) - h);
-			if (j * 128 > w - 8)
-				size_img[1] = 128 - ((j * 128) - w);
+			if ((j + 1) * 128 > w)
+				size_img[1] = 128 - (((j + 1)  * 128) - w);
 			mlx_image_put_image_limit_gl(((t_mlx_camera_gl *)game->graph_data->cameras->content)->bckgd,
 				mlx_get_image_by_name_gl(game->graph_data, "bckgd_map"),
 				(int[2]){(i * 128) + 64, (j * 128) + 64}, size_img);
 		}
 	}
-	return (1);
-}
-
-int	graph_draw_map_border(t_game *game, int h, int w, int size_tile[2])
-{
-	int				i;
-	int				j;
-	t_mlx_image_gl	*dst;
-
-	dst = ((t_mlx_camera_gl *)(game->graph_data->cameras->content))->bckgd;
-	if (!dst)
-		return (0);
-	i = -1;
-	while (++i < w)
-	{
-		j = -1;
-		while (++j < 4)
-		{
-			mlx_image_put_pixel_gl(dst, i + 64, 64 + j, 0);
-			mlx_image_put_pixel_gl(dst, i + 64, 64 + h - j, 0);
-		}
-	}
-	i = -1;
-	while (++i < h)
-	{
-		j = -1;
-		while (++j < 4)
-		{
-			mlx_image_put_pixel_gl(dst, 64 + j, i + 64, 0);
-			mlx_image_put_pixel_gl(dst, 64 + w - j, i + 64, 0);
-		}
-	}
-	i = -1;
-	j = -1;
 	return (1);
 }
 
@@ -153,7 +119,7 @@ int	graph_show_map(t_game *game)
 		return (0);
 	if (!graph_draw_map_tiles(game, size_tile))
 		return (0);
-	if (!graph_draw_map_border(game, height, width))
+	if (!graph_draw_map_border(game, height, width, size_tile))
 		return (0);
 	return (1);
 }

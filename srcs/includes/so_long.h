@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 19:43:25 by glions            #+#    #+#             */
-/*   Updated: 2024/04/30 12:22:57 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/04 15:52:50 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ int				graph_setup_cam(t_game *game, t_mlx_camera_gl *camera);
 int				graph_draw_world(t_game *game, t_mlx_camera_gl *camera);
 int				graph_update_animations(t_game *game);
 int				graph_show_map(t_game *game);
+int				graph_draw_map_border(t_game *game, int h, int w, int size_tile[2]);
 
 // GAME
 int				game_moove_right(t_game *game);
