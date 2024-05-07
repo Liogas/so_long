@@ -1,7 +1,7 @@
 # SO_LONG
 
-# DERNIER PUSH (04/04/2024:17:00)
-- Mise en place de la minimap terminé !!
+# DERNIER PUSH (07/04/2024:14:18)
+- Compris d'ou venait le bug pour les petites map : Faire un affichage complet de la map sans passer par le set up de la camera pour les maps pouvant rentrer entierement dans l'ecran
 
 # EN COURS
 - Animation de victoire
