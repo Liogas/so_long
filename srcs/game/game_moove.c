@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 17:00:32 by glions            #+#    #+#             */
-/*   Updated: 2024/04/30 10:47:15 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/10 09:35:08 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,6 @@ int	game_moove_up(t_game *game)
 	if (!moove_valid(game->map, game->player->pos_y - 1, game->player->pos_x,
 			game))
 		return (1);
-	// if (!mlx_object_set_curr_animation_gl(game->graph_data, "player", "player_moove"))
-	// 	return (0);
-	// game->player->target_y = game->player->target_y - 192;
 	if (game->map->tab[game->player->pos_y][game->player->pos_x] == 6)
 		game->map->tab[game->player->pos_y][game->player->pos_x] = 4;
 	else
@@ -56,9 +53,6 @@ int	game_moove_down(t_game *game)
 	if (!moove_valid(game->map, game->player->pos_y + 1, game->player->pos_x,
 			game))
 		return (1);
-	// if (!mlx_object_set_curr_animation_gl(game->graph_data, "player", "player_moove"))
-	// 	return (0);
-	// game->player->target_x = game->player->target_y + 192;
 	if (game->map->tab[game->player->pos_y][game->player->pos_x] == 6)
 		game->map->tab[game->player->pos_y][game->player->pos_x] = 4;
 	else
@@ -72,9 +66,6 @@ int	game_moove_left(t_game *game)
 	if (!moove_valid(game->map, game->player->pos_y, game->player->pos_x - 1,
 			game))
 		return (1);
-	// if (!mlx_object_set_curr_animation_gl(game->graph_data, "player", "player_moove"))
-	// 	return (0);
-	// game->player->target_x = game->player->target_x - 192;
 	if (game->map->tab[game->player->pos_y][game->player->pos_x] == 6)
 		game->map->tab[game->player->pos_y][game->player->pos_x] = 4;
 	else
@@ -88,9 +79,6 @@ int	game_moove_right(t_game *game)
 	if (!moove_valid(game->map, game->player->pos_y, game->player->pos_x + 1,
 			game))
 		return (1);
-	// if (!mlx_object_set_curr_animation_gl(game->graph_data, "player", "player_moove"))
-	// 	return (0);
-	// game->player->target_x = game->player->target_x + 192;
 	if (game->map->tab[game->player->pos_y][game->player->pos_x] == 6)
 		game->map->tab[game->player->pos_y][game->player->pos_x] = 4;
 	else

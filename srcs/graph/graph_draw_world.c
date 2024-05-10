@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 18:25:40 by glions            #+#    #+#             */
-/*   Updated: 2024/05/07 14:08:17 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/10 09:30:49 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ static int	graph_draw_first_step(t_game *game, t_mlx_image_gl **dst,
 
 	i = -1;
 	k = data->start[0];
-	while (++i < 5)
+	while (++i < 5 && i < data->end[0])
 	{
 		j = -1;
 		l = data->start[1];
-		while (++j < 7)
+		while (++j < 7 && j < data->end[1])
 		{
 			if (!graph_draw_texture((int [2]){i, j}, game->map->tab[k][l], game,
 					*dst))

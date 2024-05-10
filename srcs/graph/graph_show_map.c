@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 10:52:33 by glions            #+#    #+#             */
-/*   Updated: 2024/05/04 16:55:10 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/10 09:37:44 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	graph_draw_map_tiles(t_game *game, int size_tile[2])
 		pos[1] = 5;
 		while (++j < game->map->width - 2)
 		{
-			if (!graph_draw_map_tile(camera->bckgd, (int[2]){i * size_tile[0]
+			if (!graph_draw_map_tile(camera->bckgd, (int [2]){i * size_tile[0]
 					+ 64, j * size_tile[1] + 64}, size_tile, game->map->tab[i
 					+ 1][j + 1]))
 				return (0);
@@ -79,9 +79,10 @@ int	graph_draw_map_tiles(t_game *game, int size_tile[2])
 
 int	graph_draw_map_bkcgd(t_game *game, int h, int w)
 {
-	int	i;
-	int	j;
-	int	size_img[2];
+	int				i;
+	int				j;
+	int				size_img[2];
+	t_mlx_camera_gl	*cam;
 
 	i = -1;
 	while (++i < 5)
@@ -94,10 +95,11 @@ int	graph_draw_map_bkcgd(t_game *game, int h, int w)
 			if ((i + 1) * 128 > h)
 				size_img[0] = 128 - (((i + 1) * 128) - h);
 			if ((j + 1) * 128 > w)
-				size_img[1] = 128 - (((j + 1)  * 128) - w);
-			mlx_image_put_image_limit_gl(((t_mlx_camera_gl *)game->graph_data->cameras->content)->bckgd,
+				size_img[1] = 128 - (((j + 1) * 128) - w);
+			cam = game->graph_data->cameras->content;
+			mlx_image_put_image_limit_gl(cam->bckgd,
 				mlx_get_image_by_name_gl(game->graph_data, "bckgd_map"),
-				(int[2]){(i * 128) + 64, (j * 128) + 64}, size_img);
+				(int [2]){(i * 128) + 64, (j * 128) + 64}, size_img);
 		}
 	}
 	return (1);

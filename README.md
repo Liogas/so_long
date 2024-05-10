@@ -1,11 +1,10 @@
 # SO_LONG
 
-# DERNIER PUSH (07/04/2024:14:18)
-- Compris d'ou venait le bug pour les petites map : Faire un affichage complet de la map sans passer par le set up de la camera pour les maps pouvant rentrer entierement dans l'ecran
+# DERNIER PUSH (10/04/2024:09:39)
+- Crash lors de l'ouverture de petite map fix
 
 # EN COURS
 - Animation de victoire
-- Corriger les petits bugs présents
 - UI
 
 # A FAIRE
