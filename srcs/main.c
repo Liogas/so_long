@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 19:41:10 by glions            #+#    #+#             */
-/*   Updated: 2024/05/07 14:08:34 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/13 15:17:26 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int	main(int ac, char **av)
 	if (!init_game(parsing(map, file), &game))
 		return (free_game(game), 1);
 	if (!start_game(game))
-		return (printf("ERROR start_game\n"), free_game(game), 1);
+		return (ft_putstr_fd("ERROR : start_game\n", 2), free_game(game), 1);
 	free_game(game);
 	return (0);
 }

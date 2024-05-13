@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:38:35 by glions            #+#    #+#             */
-/*   Updated: 2024/04/20 23:04:50 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/13 14:45:34 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_mlx_image_gl	*mlx_load_img_gl(t_mlx_gl *mlx, char *path, char *name)
 {
-	t_mlx_image_gl *new;
+	t_mlx_image_gl	*new;
 
 	if (!mlx || !path)
 		return (NULL);

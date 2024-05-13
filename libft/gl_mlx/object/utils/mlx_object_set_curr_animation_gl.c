@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:21:31 by glions            #+#    #+#             */
-/*   Updated: 2024/04/25 18:31:49 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/13 15:06:52 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	mlx_object_set_curr_animation_gl(t_mlx_gl *mlx, char *object_name,
 		char *animation_name)
 {
-	t_mlx_object_gl *obj;
+	t_mlx_object_gl	*obj;
 
 	if (!mlx || !object_name)
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:47:59 by glions            #+#    #+#             */
-/*   Updated: 2024/04/23 09:56:44 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/13 15:08:16 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_mlx_object_gl	*mlx_get_object_by_name_gl(t_mlx_gl *mlx, char *name)
 {
-	t_list_gl *list;
+	t_list_gl	*list;
 
 	if (!mlx || !name)
 		return (NULL);

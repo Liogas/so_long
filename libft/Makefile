@@ -44,28 +44,26 @@ OBJS_UTILS		=	$(SRCS_UTILS:.c=.o)
 
 PATH_MLX		=	./gl_mlx/
 SRCS_MLX		=	$(PATH_MLX)image/mlx_create_img_gl.c $(PATH_MLX)image/mlx_free_img_gl.c \
-					$(PATH_MLX)image/mlx_load_img_gl.c  $(PATH_MLX)image/mlx_print_image_data_gl.c \
+					$(PATH_MLX)image/mlx_load_img_gl.c \
 					$(PATH_MLX)image/utils/mlx_image_put_image_gl.c  $(PATH_MLX)image/utils/mlx_image_get_sprite_by_name_gl.c \
 					$(PATH_MLX)image/utils/mlx_image_put_pixel_gl.c  $(PATH_MLX)image/utils/mlx_image_get_pixel_gl.c \
 					$(PATH_MLX)image/utils/mlx_image_put_area_image_gl.c \
 \
 					$(PATH_MLX)sprite/mlx_create_sprite_gl.c $(PATH_MLX)sprite/mlx_free_sprite_gl.c \
-					$(PATH_MLX)sprite/mlx_print_sprite_data_gl.c \
 \
 					$(PATH_MLX)window/mlx_create_win_gl.c $(PATH_MLX)window/mlx_free_win_gl.c \
-					$(PATH_MLX)window/mlx_print_window_data_gl.c \
 \
 					$(PATH_MLX)animation/mlx_create_animation_gl.c $(PATH_MLX)animation/mlx_free_animation_gl.c \
-					$(PATH_MLX)animation/mlx_print_animation_data_gl.c $(PATH_MLX)animation/utils/mlx_animation_put_to_img_gl.c\
+					$(PATH_MLX)animation/utils/mlx_animation_put_to_img_gl.c\
 \
 					$(PATH_MLX)camera/mlx_camera_create_gl.c $(PATH_MLX)camera/mlx_camera_free_gl.c \
 					$(PATH_MLX)camera/utils/mlx_camera_update_gl.c $(PATH_MLX)camera/utils/mlx_camera_set_moredata_gl.c \
 \
 					$(PATH_MLX)object/mlx_create_object_gl.c $(PATH_MLX)object/mlx_free_object_gl.c \
-					$(PATH_MLX)object/mlx_print_object_data_gl.c $(PATH_MLX)object/utils/mlx_object_set_curr_animation_gl.c \
+					$(PATH_MLX)object/utils/mlx_object_set_curr_animation_gl.c \
 \
 					$(PATH_MLX)mlx_init_gl.c $(PATH_MLX)mlx_free_gl.c \
-					$(PATH_MLX)mlx_print_data_gl.c $(PATH_MLX)utils/mlx_addobject_gl.c \
+					$(PATH_MLX)utils/mlx_addobject_gl.c \
 					$(PATH_MLX)utils/mlx_addimage_gl.c $(PATH_MLX)utils/mlx_addsprite_gl.c \
 					$(PATH_MLX)utils/mlx_addanimation_gl.c $(PATH_MLX)utils/mlx_get_image_by_name_gl.c \
 					$(PATH_MLX)utils/mlx_get_object_by_name_gl.c $(PATH_MLX)utils/mlx_get_animation_by_name_gl.c \

@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 14:36:45 by glions            #+#    #+#             */
-/*   Updated: 2024/04/24 20:36:58 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/13 15:09:03 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	read_nextline_file_gl(t_file_gl *file)
 void	read_all_file_gl(t_file_gl *file)
 {
 	int		while_state;
-	
+
 	while_state = 1;
 	while (while_state)
 		while_state = read_nextline_file_gl(file);

@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 01:12:32 by glions            #+#    #+#             */
-/*   Updated: 2024/04/19 09:14:37 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/13 14:24:25 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	free_list_gl(t_list_gl **list, void (*del)(void *))
 {
-	t_list_gl *tmp;
-	
+	t_list_gl	*tmp;
+
 	tmp = NULL;
 	while (*list)
 	{
@@ -28,7 +28,8 @@ void	free_list_gl(t_list_gl **list, void (*del)(void *))
 	*list = NULL;
 }
 
-void	free_element_gl(t_list_gl **list, void (*del)(void *), t_list_gl *element)
+void	free_element_gl(t_list_gl **list, void (*del)(void *),
+		t_list_gl *element)
 {
 	t_list_gl	*tmp;
 	t_list_gl	*before;

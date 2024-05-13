@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:53:28 by glions            #+#    #+#             */
-/*   Updated: 2024/04/23 14:26:05 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/13 14:45:21 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ static void	mlx_free_sprites_gl(t_mlx_image_gl *img)
 		free(img->sprites);
 		img->sprites = tmp;
 	}
-	
 }
 
 void	mlx_free_img_gl(t_mlx_gl *mlx, t_mlx_image_gl *img)

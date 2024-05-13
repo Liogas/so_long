@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:46:20 by glions            #+#    #+#             */
-/*   Updated: 2024/04/26 15:18:17 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/13 15:15:22 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_mlx_camera_gl	*mlx_camera_create_gl(char *name, t_mlx_object_gl *target,
 	t_mlx_camera_gl	*new;
 
 	if (!target || !name)
-		return (printf("1\n"), NULL);
+		return (NULL);
 	new = malloc(sizeof(t_mlx_camera_gl));
 	if (!new)
 		return (NULL);

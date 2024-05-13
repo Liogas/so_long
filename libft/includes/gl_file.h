@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 14:29:11 by glions            #+#    #+#             */
-/*   Updated: 2024/04/24 20:27:29 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/13 15:09:27 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@
 
 typedef struct s_file_gl
 {
-	char	*pathfile;
-	int		fd;
+	char		*pathfile;
+	int			fd;
 	t_list_gl	*lines;
-	int		nblines;
+	int			nblines;
 }	t_file_gl;
 
 t_file_gl	*new_file_gl(char *pathfile, int __oflag);

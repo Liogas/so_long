@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 01:28:04 by glions            #+#    #+#             */
-/*   Updated: 2024/04/21 19:20:25 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/13 14:23:25 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 int	addback_list_gl(t_list_gl **list, t_list_gl *element)
 {
-    t_list_gl	*tmp;
+	t_list_gl	*tmp;
 
 	if (!list || !element)
 		return (0);
-    if (!*list)
+	if (!*list)
 		*list = element;
 	else
 	{
-	    tmp = *list;
-	    while (tmp->next)
-	        tmp = tmp->next;
-	    tmp->next = element;
+		tmp = *list;
+		while (tmp->next)
+			tmp = tmp->next;
+		tmp->next = element;
 	}
 	return (1);
 }
@@ -34,12 +34,12 @@ int	addfront_list_gl(t_list_gl **list, t_list_gl *element)
 {
 	if (!list || !element)
 		return (0);
-    if (!*list)
-        *list = element;
+	if (!*list)
+		*list = element;
 	else
 	{
-	    element->next = *list;
-    	*list = element;
+		element->next = *list;
+		*list = element;
 	}
 	return (1);
 }
@@ -74,7 +74,7 @@ int	addbefore_list_gl(t_list_gl **list, t_list_gl *after, t_list_gl *element)
 		{
 			if (!addafter_list_gl(&before, element))
 				return (0);
-			break;
+			break ;
 		}
 		before = tmp;
 		tmp = tmp->next;

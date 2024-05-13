@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 10:53:39 by glions            #+#    #+#             */
-/*   Updated: 2024/04/23 11:26:06 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/13 14:47:17 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_mlx_sprite_gl	*mlx_image_get_sprite_by_name_gl(t_mlx_image_gl *image,
 		char *sprite_name)
 {
-	t_list_gl		*list;
+	t_list_gl	*list;
 
 	if (!image || !sprite_name || !sprite_name[0])
 		return (NULL);

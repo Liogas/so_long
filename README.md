@@ -1,22 +1,18 @@
 # SO_LONG
 
-# DERNIER PUSH (10/04/2024:09:39)
-- Crash lors de l'ouverture de petite map fix
+# DERNIER PUSH (13/04/2024:15:20)
+- Ajout du nombre de coups directement dans la fenetre
+- Norminette OK
 
 # EN COURS
-- Animation de victoire
-- UI
+- Revoir le makefile, oblige de faire make re lorsque je modifie la libft
+- Afficher le nombre de coups dans la console uniquement pour la partie mandatory
 
 # A FAIRE
-- Bordure de map retravaillée
-- Améliorer les graphismes
 
 # A REVOIR
-- Ajouter les animations manquantes (déplacement, animation d'attaque)
 
 # A REFLECHIR
-- Affichage des cases non explorées en noir et blanc
-- Mettre en place un système de lumière
 
 # FINI
 - Parsing

@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:08:06 by glions            #+#    #+#             */
-/*   Updated: 2024/04/25 18:11:28 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/13 15:07:48 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	already_in(t_list_gl *list, t_mlx_sprite_gl *sprite)
 {
 	t_list_gl	*tmp;
-	
+
 	if (!list || !sprite)
 		return (0);
 	tmp = list;
