@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 18:25:40 by glions            #+#    #+#             */
-/*   Updated: 2024/05/13 15:14:35 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/13 16:42:40 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,9 @@ int	graph_draw_world(t_game *game, t_mlx_camera_gl *camera)
 	nb = ft_itoa(game->turns);
 	if (!nb)
 		return (0);
-	mlx_string_put(game->graph_data->ptr, game->graph_data->window->ptr, 50, 50,
-		0, nb);
+	if (BONUS == 1)
+		mlx_string_put(game->graph_data->ptr, game->graph_data->window->ptr, 50, 50,
+			0, nb);
 	free(nb);
 	return (1);
 }

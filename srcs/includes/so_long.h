@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 19:43:25 by glions            #+#    #+#             */
-/*   Updated: 2024/05/10 09:37:54 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/13 16:34:26 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define SO_LONG_H
 
 # include "libft.h"
+
+#ifndef BONUS
+# define BONUS 0
+#endif
 
 typedef struct s_camera
 {

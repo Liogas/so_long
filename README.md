@@ -1,14 +1,13 @@
 # SO_LONG
 
-# DERNIER PUSH (13/04/2024:15:20)
-- Ajout du nombre de coups directement dans la fenetre
-- Norminette OK
+# DERNIER PUSH (13/04/2024:16:44)
+- Test bonus
 
 # EN COURS
-- Revoir le makefile, oblige de faire make re lorsque je modifie la libft
-- Afficher le nombre de coups dans la console uniquement pour la partie mandatory
+- Revoir -D dans le makefile
 
 # A FAIRE
+- ajouter le fait de quitter lors d'un clique sur la croix
 
 # A REVOIR
 

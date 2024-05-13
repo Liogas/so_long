@@ -32,6 +32,18 @@ $(NAME): $(LIB) $(MINILIBX) $(OBJS_GAME)
 	@echo "SO_LONG  ✅"
 	@echo "👌👌👌👌👌👌👌👌👌👌👌👌👌👌👌👌👌👌👌👌👌"
 
+bonus: fclean $(LIB) $(MINILIBX) $(OBJS_GAME)
+	@clear
+	@echo "MINILIBX ✅"
+	@echo "LIBFT    ✅"
+	@echo "SO_LONG  ❌"
+	$(CC) $(CFLAGS) -o $(NAME) -D BONUS=1 $(OBJS_GAME) $(LIB) $(INCLUDES) $(MINILIBX) -lXext -lX11 -lm
+	# @clear
+	@echo "MINILIBX			✅"
+	@echo "LIBFT   			✅"
+	@echo "SO_LONG(bonus)	✅"
+	@echo "👌👌👌👌👌👌👌👌👌👌👌👌👌👌👌👌👌👌👌👌👌"
+
 $(LIB):
 	@make -C libft
 
