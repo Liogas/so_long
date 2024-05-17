@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 19:41:10 by glions            #+#    #+#             */
-/*   Updated: 2024/05/13 15:17:26 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/17 09:28:53 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,18 @@ static int	refresh_animations(t_game *game)
 	return (0);
 }
 
+int	graph_window_close(t_game *game)
+{
+	mlx_loop_end(game->graph_data->ptr);
+	return (1);
+}
+
 int	key_listener(int key, t_game *game)
 {
 	int	e;
 
 	if (key == XK_Escape)
-		mlx_loop_end(game->graph_data->ptr);
+		graph_window_close(game);
 	else if (key == XK_m || key == XK_M)
 		game->minimap *= -1;
 	else if (!game->win)
@@ -43,7 +49,7 @@ int	key_listener(int key, t_game *game)
 		else if (key == XK_s || key == XK_S)
 			e = game_moove_down(game);
 		if (!e)
-			mlx_loop_end(game->graph_data->ptr);
+			graph_window_close(game->graph_data->ptr);
 		if (game->win)
 			(ft_putstr_fd("Well done ! number of tantatives : ", 1),
 				ft_putnbr_fd(game->turns, 1), ft_putchar_fd('\n', 1));
@@ -69,6 +75,7 @@ static int	start_game(t_game *game)
 				"camera_0")))
 		return (ft_putstr_fd("ERROR: draw_map\n", 2), 0);
 	mlx_key_hook(game->graph_data->window->ptr, &key_listener, game);
+	mlx_hook(game->graph_data->window->ptr, 17, 0, &graph_window_close, game);
 	mlx_loop_hook(game->graph_data->ptr, &refresh_animations, game);
 	mlx_loop(game->graph_data->ptr);
 	return (1);

@@ -1,13 +1,13 @@
 # SO_LONG
 
-# DERNIER PUSH (13/04/2024:16:44)
-- Test bonus
+# DERNIER PUSH (17/05/2024:09:30)
+- ajouter le fait de quitter lors d'un clique sur la croix
 
 # EN COURS
 - Revoir -D dans le makefile
+- Revoir norminette
 
 # A FAIRE
-- ajouter le fait de quitter lors d'un clique sur la croix
 
 # A REVOIR
 
