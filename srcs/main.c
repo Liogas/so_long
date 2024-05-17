@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 19:41:10 by glions            #+#    #+#             */
-/*   Updated: 2024/05/17 09:28:53 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/17 09:36:06 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,6 @@ static int	refresh_animations(t_game *game)
 	}
 	graph_draw_world(game, game->graph_data->cameras->content);
 	return (0);
-}
-
-int	graph_window_close(t_game *game)
-{
-	mlx_loop_end(game->graph_data->ptr);
-	return (1);
 }
 
 int	key_listener(int key, t_game *game)

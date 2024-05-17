@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 19:43:25 by glions            #+#    #+#             */
-/*   Updated: 2024/05/13 16:34:26 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/17 10:51:17 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 # define SO_LONG_H
 
 # include "libft.h"
-
-#ifndef BONUS
-# define BONUS 0
-#endif
 
 typedef struct s_camera
 {
@@ -101,12 +97,14 @@ int				graph_drawcollect(int y, int x, t_game *game,
 					t_mlx_image_gl *dst);
 int				graph_drawfloor(int y, int x, t_game *game,
 					t_mlx_image_gl *dst);
+int				graph_draw_banner(t_game *game, t_mlx_camera_gl *camera);
 int				graph_setup_cam(t_game *game, t_mlx_camera_gl *camera);
 int				graph_draw_world(t_game *game, t_mlx_camera_gl *camera);
 int				graph_update_animations(t_game *game);
 int				graph_show_map(t_game *game);
 int				graph_draw_map_border(t_game *game, int h, int w,
 					int size_tile[2]);
+int				graph_window_close(t_game *game);
 
 // GAME
 int				game_moove_right(t_game *game);

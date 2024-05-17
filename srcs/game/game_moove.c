@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 17:00:32 by glions            #+#    #+#             */
-/*   Updated: 2024/05/13 16:34:56 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/17 10:25:03 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ static int	moove_valid(t_map *map, int pos_y, int pos_x, t_game *game)
 	if (map->tab[pos_y][pos_x] == 1 || map->tab[pos_y][pos_x] == 2)
 		return (0);
 	game->turns++;
-	if (!BONUS)
-		(ft_putstr_fd("Attempts : ", 1), ft_putnbr_fd(game->turns, 1),
-			ft_putchar_fd('\n', 1));
+	(ft_putstr_fd("Attempts : ", 1), ft_putnbr_fd(game->turns, 1),
+		ft_putchar_fd('\n', 1));
 	if (map->tab[pos_y][pos_x] == 5)
 		game->sheeps--;
 	if (map->tab[pos_y][pos_x] == 4)

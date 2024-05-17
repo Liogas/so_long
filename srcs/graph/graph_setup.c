@@ -6,11 +6,17 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:22:16 by glions            #+#    #+#             */
-/*   Updated: 2024/05/13 14:12:10 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/17 09:50:24 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+int	graph_window_close(t_game *game)
+{
+	mlx_loop_end(game->graph_data->ptr);
+	return (1);
+}
 
 static int	graph_load_images(t_game *game)
 {
@@ -25,10 +31,7 @@ static int	graph_load_images(t_game *game)
 	if (!graph_addbackgmap(game))
 		return (0);
 	if (!mlx_addimage_gl(game->graph_data, mlx_load_img_gl(game->graph_data,
-				"./srcs/sprites/grass.xpm", "floor")))
-		return (0);
-	if (!mlx_addsprite_gl(game->graph_data, "floor",
-			mlx_create_sprite_gl("floor", 0, 1, (int [2]){192, 192})))
+				"./srcs/sprites/floor.xpm", "floor")))
 		return (0);
 	return (1);
 }

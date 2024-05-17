@@ -1,11 +1,11 @@
 # SO_LONG
 
-# DERNIER PUSH (17/05/2024:09:30)
-- ajouter le fait de quitter lors d'un clique sur la croix
+# DERNIER PUSH (17/05/2024:11:00)
+- Revoir norminette
+- Changement du sol (affichage plus propre)
+- Ajout de la banniere en dessous du compteur de tours
 
 # EN COURS
-- Revoir -D dans le makefile
-- Revoir norminette
 
 # A FAIRE
 
@@ -19,3 +19,5 @@
 - Gameplay
 - Minimap
 - Caméra
+
+# !!!! VERSION PUSH POUR 42 (01) !!!!

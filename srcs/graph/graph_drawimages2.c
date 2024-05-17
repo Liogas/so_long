@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 17:52:01 by glions            #+#    #+#             */
-/*   Updated: 2024/05/07 14:08:23 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/17 10:53:58 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,20 @@ int	graph_draw_exit_player(int y, int x, t_game *game, t_mlx_image_gl *dst)
 	mlx_animation_put_to_img_gl(game->graph_data, object,
 		mlx_get_animation_by_name_gl(game->graph_data, object->name,
 			object->curr_anim), dst);
+	return (1);
+}
+
+int	graph_draw_banner(t_game *game, t_mlx_camera_gl *camera)
+{
+	t_camera		*data;
+	t_mlx_image_gl	*img;
+
+	data = camera->more_data;
+	img = mlx_load_img_gl(game->graph_data, "./srcs/sprites/banner.xpm",
+			"banner");
+	if (!img)
+		return (0);
+	mlx_image_put_image_gl(camera->bckgd, img, 10, 10);
+	mlx_free_img_gl(game->graph_data, img);
 	return (1);
 }
