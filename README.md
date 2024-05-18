@@ -1,9 +1,7 @@
 # SO_LONG
 
-# DERNIER PUSH (17/05/2024:11:00)
-- Revoir norminette
-- Changement du sol (affichage plus propre)
-- Ajout de la banniere en dessous du compteur de tours
+# DERNIER PUSH (18/05/2024:20:00)
+- Bilan correction
 
 # EN COURS
 
@@ -21,3 +19,4 @@
 - Caméra
 
 # !!!! VERSION PUSH POUR 42 (01) !!!!
+# VALIDE A 120 / 100 avec 2 Outstanding
