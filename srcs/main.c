@@ -6,7 +6,7 @@
 /*   By: glions <glions@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 19:41:10 by glions            #+#    #+#             */
-/*   Updated: 2024/05/17 09:36:06 by glions           ###   ########.fr       */
+/*   Updated: 2024/05/17 11:08:19 by glions           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ int	main(int ac, char **av)
 				'\n'));
 	if (!map)
 		return (ft_putstr_fd("ERROR : new_map\n", 2), free_file_gl(file), 1);
+	game = NULL;
 	if (!init_game(parsing(map, file), &game))
 		return (free_game(game), 1);
 	if (!start_game(game))
